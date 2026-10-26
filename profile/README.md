@@ -1,3 +1,5 @@
+<p align="center"><img src="https://raw.githubusercontent.com/big-windowmaker/big-wm/main/themes/logo/big-wm.svg" width="140" alt="Logo do Big WindowMaker"></p>
+
 # Big WindowMaker
 
 Uma edição do [BigLinux](https://www.biglinux.com.br) / [BigCommunity](https://communitybig.org)
