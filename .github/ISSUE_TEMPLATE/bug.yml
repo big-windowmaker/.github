@@ -1,0 +1,40 @@
+name: Relatar um problema
+description: Algo não funciona como deveria
+labels: [bug]
+body:
+  - type: dropdown
+    id: session
+    attributes:
+      label: Sessão
+      options:
+        - Big WindowMaker — X11
+        - Big WindowMaker — Wayland (experimental)
+        - Modo Live / instalador
+        - Não se aplica
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: O que aconteceu e o que você esperava
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Como reproduzir
+      placeholder: "1. ...\n2. ...\n3. ..."
+    validations:
+      required: true
+  - type: textarea
+    id: system
+    attributes:
+      label: Sistema
+      description: Saída de `inxi -Gxxz` e `pacman -Q windowmaker wlmaker big-wm-session` (o que existir)
+      render: text
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: "`journalctl --user -b -t big-wm-firstrun` e `~/.xsession-errors`, se houver"
+      render: text
