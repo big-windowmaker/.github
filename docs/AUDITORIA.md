@@ -29,10 +29,18 @@ do `build-iso` (branch stable, kernel 6.18 LTS), ISO
 | Sessão Wayland (`big-wm-wayland`) no sistema instalado: wlmaker no DRM, XWayland, papel de parede | ✅ | ✅ |
 | Saúde do sistema instalado (0 unidades com falha) | ✅ | ✅ |
 | Segurança do sistema instalado (firewall ativo, `INPUT DROP`) | ⚠️ softfail | ⚠️ softfail |
+| Atualização do sistema instalado: `pacman -Syu`, instalar e remover pacote, integridade dos pacotes, reinício e nova sessão | ✅ (VM local, KVM) | — |
 
 O softfail de segurança registra escolhas da base BigLinux listadas em
-"Limitações conhecidas". Não testados ainda: atualização do sistema instalado
-(`pacman -Syu` e reinício), vários monitores, áudio com dispositivo real.
+"Limitações conhecidas". A atualização (módulo `bigwm_update`) foi validada
+localmente e entra no pipeline a partir do commit
+[`641281a`](https://github.com/big-windowmaker/build-iso/commit/641281a).
+Não testados ainda: vários monitores, áudio com dispositivo real.
+
+Observação da atualização: o `pacman -Qkk` acusa os `.desktop` do
+`windowmaker` e do `wlmaker` como alterados. É o `render-menu-options.sh` da
+BigLinux, que no primeiro boot acrescenta a ação "Software Render" a todo
+`.desktop` do sistema; os pacotes `big-wm-*` saem íntegros.
 
 ## P0 — bloqueadores
 
@@ -109,8 +117,9 @@ lista de aplicativos herdada da edição XFCE.
 - **Repositório de teste:** a ISO de teste usa o `[bigwm-local]` sem
   assinatura; uma release estável depende de repositório e chave próprios ou da
   publicação dos pacotes no repositório da BigCommunity.
-- **Imagem do isotovideo:** fixada por digest no registro do openSUSE, que
-  remove versões antigas; precisa de um espelho sob controle do projeto.
+- **Imagem do isotovideo:** espelhada em `ghcr.io/big-windowmaker` com o mesmo
+  digest ([`mirror-openqa-image.yml`](https://github.com/big-windowmaker/build-iso/blob/main/.github/workflows/mirror-openqa-image.yml));
+  o registro do openSUSE fica só como origem.
 - **Processo zumbi na sessão Wayland:** o wlmaker 0.8 só recolhe os processos
   do `Autostart` ao encerrar; o `big-wm-session-ctl start` fica `<defunct>`
   enquanto a sessão dura (inofensivo).
