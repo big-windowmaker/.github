@@ -387,6 +387,7 @@ Prontos e testados, mas **ainda não na ISO que você baixa** hoje:
 |---|---|---|
 | [big-wm](https://github.com/big-windowmaker/big-wm) | Sessões, configuração padrão, temas e integração do desktop | [![CI](https://github.com/big-windowmaker/big-wm/actions/workflows/ci.yml/badge.svg)](https://github.com/big-windowmaker/big-wm/actions/workflows/ci.yml) |
 | [packages](https://github.com/big-windowmaker/packages) | PKGBUILDs: Window Maker, wlmaker, wmake-zones, dockapps | [![build](https://github.com/big-windowmaker/packages/actions/workflows/build.yml/badge.svg)](https://github.com/big-windowmaker/packages/actions/workflows/build.yml) |
+| [tabbed-dock](https://github.com/big-windowmaker/tabbed-dock) | Dock horizontal com abas e o controlador no Dock (X11 e Wayland) | [![CI](https://github.com/big-windowmaker/tabbed-dock/actions/workflows/ci.yml/badge.svg)](https://github.com/big-windowmaker/tabbed-dock/actions/workflows/ci.yml) |
 | [wmake-zones](https://github.com/big-windowmaker/wmake-zones) | Zonas de encaixe e mosaico de janelas (X11 e Wayland) | [![CI](https://github.com/big-windowmaker/wmake-zones/actions/workflows/ci.yml/badge.svg)](https://github.com/big-windowmaker/wmake-zones/actions/workflows/ci.yml) |
 | [build-iso](https://github.com/big-windowmaker/build-iso) | Geração da ISO, boot em VMs e teste de instalação (BIOS e UEFI) | [![Build ISO](https://github.com/big-windowmaker/build-iso/actions/workflows/build-iso.yml/badge.svg)](https://github.com/big-windowmaker/build-iso/actions/workflows/build-iso.yml) |
 | [iso-profiles](https://github.com/big-windowmaker/iso-profiles) | Perfil da edição `bigcommunity/wmaker` | |
@@ -411,14 +412,26 @@ Documentação técnica:
 
 ## Créditos e licença
 
-Desenvolvimento do Big WindowMaker:
+**Mantenedores do Big WindowMaker**
 
-- **Rafael Ruscher** — <rruscher@gmail.com.br>
+- **Rafael Ruscher** — <rruscher@gmail.com>
 - **Barnabé Di Kartola** — <barnabedikartola@gmail.com>
 
-Sobre os ombros do [Window Maker](https://www.windowmaker.org/), do
-[wlmaker](https://github.com/phkaeser/wlmaker) (Philipp Kaeser), do
-[BigLinux](https://www.biglinux.com.br) e da [BigCommunity](https://communitybig.org).
+**Agradecimentos especiais**
 
-Software livre: cada repositório traz a sua licença (big-wm e wmake-zones:
-GPL-2.0; build-iso e biglinux-livecd: GPL-3.0).
+- **Alfredo Kojima** — pelo desenvolvimento original do
+  [Window Maker](https://www.windowmaker.org/) e pelo legado que inspirou
+  este projeto.
+- **Philipp Kaeser** — pelo [wlmaker](https://github.com/phkaeser/wlmaker) e
+  pelo trabalho de levar a inspiração do Window Maker ao Wayland.
+- **Bruno Gonçalves** — pelo [BigLinux](https://www.biglinux.com.br/) e por
+  suas contribuições ao ecossistema Linux.
+- **Tales A. Mendonça** — pelas contribuições ao desenvolvimento e
+  fortalecimento da [BigCommunity](https://communitybig.org).
+
+O Window Maker, o wlmaker e os demais projetos continuam com os seus
+autores e mantenedores; o Big WindowMaker integra, empacota e corrige.
+
+Software livre: cada repositório traz a sua licença (big-wm, wmake-zones e
+tabbed-dock: GPL-2.0-or-later; build-iso e biglinux-livecd: GPL-3.0;
+PKGBUILDs do packages: 0BSD).
