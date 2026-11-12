@@ -8,5 +8,5 @@ projeto Big WindowMaker.
 - [`docs/AUDITORIA.md`](docs/AUDITORIA.md): problemas encontrados, correções, matriz de validação e desempenho medido
 - [`CONTRIBUTING.md`](CONTRIBUTING.md) e [`SECURITY.md`](SECURITY.md): valem para todos os repositórios da organização
 
-Desenvolvimento: Rafael Ruscher <rruscher@gmail.com.br> e Barnabé Di Kartola
+Desenvolvimento: Rafael Ruscher <rruscher@gmail.com> e Barnabé Di Kartola
 <barnabedikartola@gmail.com>.
