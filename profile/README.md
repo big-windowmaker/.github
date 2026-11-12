@@ -25,11 +25,14 @@
   <a href="#-primeiros-passos">Primeiros passos</a> ·
   <a href="#-testar-numa-máquina-virtual">Máquina virtual</a> ·
   <a href="#-problemas-comuns">Problemas comuns</a> ·
-  <a href="#-repositórios">Repositórios</a>
+  <a href="#-repositórios">Repositórios</a> ·
+  <a href="#-contribuir">Contribuir</a> ·
+  <a href="#créditos-e-licença">Créditos</a> ·
+  <a href="#in-english">English</a>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/big-windowmaker/.github/main/profile/images/x11-area-de-trabalho.png" width="100%" alt="Sessão X11 do Big WindowMaker: Clip à esquerda, Dock com relógio, bandeja, volume, CPU, memória e rede à direita, menu principal aberto em Aplicativos > Acessórios, gerenciador de arquivos e calculadora">
+  <img src="https://raw.githubusercontent.com/big-windowmaker/.github/main/profile/images/x11-area-de-trabalho-2026-11.png" width="100%" alt="Sessão X11 do Big WindowMaker em 12/11/2026: menu raiz aberto, terminal com Big WindowMaker, Window Maker 0.96.0 e wmake-zones 0.4.0, calculadora, Dock com os dockapps à direita e o Dock com Abas embaixo">
 </p>
 
 > [!WARNING]
@@ -48,6 +51,8 @@
 | **Claro ou escuro** | *Aparência > Tema claro / Tema escuro* muda janelas, menus, Dock, GTK 2/3/4, libadwaita e Qt de uma vez. |
 | **Tudo no estilo NeXTSTEP** | Barras de título do Window Maker em GTK, Qt, Firefox e VSCodium; ícones redesenhados; GRUB e Plymouth no estilo da tela do Window Maker. |
 | **Área de transferência** | **Super+V** abre o histórico, com busca, favoritos e privacidade, nas duas sessões. |
+| **Dock com Abas** | Uma prateleira horizontal com abas, inspirada no OPENSTEP 4.0 beta, com os aplicativos abertos e os favoritos; controlada pelo ladrilho do Dock ([tabbed-dock](https://github.com/big-windowmaker/tabbed-dock)). |
+| **Monitores** | *Configurações > Monitores*: resolução, disposição, perfis por conjunto de monitores e volta automática em 15 s se algo der errado ([big-wm-display-resolution](https://github.com/big-windowmaker/big-wm-display-resolution)). |
 | **Leve** | A sessão X11 de referência usa cerca de 250 MiB de memória (PSS) cinco minutos depois do login. |
 
 <table>
@@ -58,6 +63,10 @@
 <tr>
 <td><img src="https://raw.githubusercontent.com/big-windowmaker/.github/main/profile/images/wayland-area-de-trabalho.png" alt="Sessão Wayland com o wlmaker: Clip à esquerda, Dock com dockapps à direita, terminal, gerenciador de arquivos e calculadora com molduras do Window Maker"><br><b>Sessão Wayland</b> com o wlmaker</td>
 <td><img src="https://raw.githubusercontent.com/big-windowmaker/.github/main/profile/images/wayland-tema-escuro.png" alt="Sessão Wayland no tema escuro com terminal mostrando um calendário, gerenciador de arquivos e calculadora"><br><b>Wayland no tema escuro</b></td>
+</tr>
+<tr>
+<td><img src="https://raw.githubusercontent.com/big-windowmaker/.github/main/profile/images/wayland-menu-no-ponteiro.png" alt="Sessão Wayland: o Thunar com os papéis de parede e o menu de contexto aberto exatamente no ponteiro, a calculadora, o Dock e o Clip do wlmaker e o Dock com Abas"><br><b>Menus no lugar</b> no Wayland e no XWayland (12/11)</td>
+<td><img src="https://raw.githubusercontent.com/big-windowmaker/.github/main/profile/images/monitores.png" alt="Configurações > Monitores com três monitores desenhados em escala, resolução, frequência, orientação e informações do EDID"><br><b>Monitores</b>: três telas, perfis e reversão segura (12/11)</td>
 </tr>
 </table>
 
@@ -379,7 +388,12 @@ Prontos e testados, mas **ainda não na ISO que você baixa** hoje:
 - Lupa e zoom de acessibilidade (Ctrl+Alt+rolagem), localizar o ponteiro ao
   sacudir o mouse e Ctrl+Alt+Esc para fechar um programa travado.
 - Menu Configurações reorganizado e tradução revisada.
-- Instalador com a identidade visual do Big WindowMaker.
+- Instalador com a identidade visual do Big WindowMaker e o Sobre da edição.
+- Menus de contexto e submenus no lugar no Wayland (o do GParted ia longe,
+  embaixo à direita), invertendo perto da borda do monitor.
+- Dock com Abas 0.3.0: o controlador redesenhado como painel OPENSTEP e a
+  janela Sobre; wmake-zones 0.4.0 com mosaico para GTK4 e dockapp LCD.
+- Monitores ligados e desligados com a sessão aberta (X11 e Wayland).
 
 ## 📦 Repositórios
 
@@ -387,6 +401,7 @@ Prontos e testados, mas **ainda não na ISO que você baixa** hoje:
 |---|---|---|
 | [big-wm](https://github.com/big-windowmaker/big-wm) | Sessões, configuração padrão, temas e integração do desktop | [![CI](https://github.com/big-windowmaker/big-wm/actions/workflows/ci.yml/badge.svg)](https://github.com/big-windowmaker/big-wm/actions/workflows/ci.yml) |
 | [packages](https://github.com/big-windowmaker/packages) | PKGBUILDs: Window Maker, wlmaker, wmake-zones, dockapps | [![build](https://github.com/big-windowmaker/packages/actions/workflows/build.yml/badge.svg)](https://github.com/big-windowmaker/packages/actions/workflows/build.yml) |
+| [big-wm-display-resolution](https://github.com/big-windowmaker/big-wm-display-resolution) | Monitores: resolução, disposição, perfis e reversão segura (X11 e Wayland) | [![CI](https://github.com/big-windowmaker/big-wm-display-resolution/actions/workflows/ci.yml/badge.svg)](https://github.com/big-windowmaker/big-wm-display-resolution/actions/workflows/ci.yml) |
 | [tabbed-dock](https://github.com/big-windowmaker/tabbed-dock) | Dock horizontal com abas e o controlador no Dock (X11 e Wayland) | [![CI](https://github.com/big-windowmaker/tabbed-dock/actions/workflows/ci.yml/badge.svg)](https://github.com/big-windowmaker/tabbed-dock/actions/workflows/ci.yml) |
 | [wmake-zones](https://github.com/big-windowmaker/wmake-zones) | Zonas de encaixe e mosaico de janelas (X11 e Wayland) | [![CI](https://github.com/big-windowmaker/wmake-zones/actions/workflows/ci.yml/badge.svg)](https://github.com/big-windowmaker/wmake-zones/actions/workflows/ci.yml) |
 | [build-iso](https://github.com/big-windowmaker/build-iso) | Geração da ISO, boot em VMs e teste de instalação (BIOS e UEFI) | [![Build ISO](https://github.com/big-windowmaker/build-iso/actions/workflows/build-iso.yml/badge.svg)](https://github.com/big-windowmaker/build-iso/actions/workflows/build-iso.yml) |
@@ -433,5 +448,20 @@ O Window Maker, o wlmaker e os demais projetos continuam com os seus
 autores e mantenedores; o Big WindowMaker integra, empacota e corrige.
 
 Software livre: cada repositório traz a sua licença (big-wm, wmake-zones e
-tabbed-dock: GPL-2.0-or-later; build-iso e biglinux-livecd: GPL-3.0;
+tabbed-dock, big-wm-display-resolution e este perfil (.github): GPL-2.0-or-later; build-iso e biglinux-livecd: GPL-3.0;
 PKGBUILDs do packages: 0BSD).
+
+## In English
+
+**Big WindowMaker** turns Window Maker into a complete desktop on
+[BigLinux](https://www.biglinux.com.br) / [BigCommunity](https://communitybig.org),
+with two sessions that share one look: **X11** with Window Maker (default,
+stable) and **Wayland** with [wlmaker](https://github.com/phkaeser/wlmaker)
+(experimental). It brings a Dock with classic dockapps, a tabbed dock,
+snap zones and tiling, light and dark themes across GTK, libadwaita and Qt,
+clipboard history and a monitor manager, all in the NeXTSTEP style. Try the
+Alpha test ISO from [build-iso releases](https://github.com/big-windowmaker/build-iso/releases)
+in live mode or a virtual machine first. Maintainers: Rafael Ruscher and
+Barnabé Di Kartola. Special thanks to Alfredo Kojima (Window Maker),
+Philipp Kaeser (wlmaker), Bruno Gonçalves (BigLinux) and Tales A. Mendonça
+(BigCommunity).
