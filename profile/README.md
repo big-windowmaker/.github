@@ -86,10 +86,10 @@
 
 ## 📥 Baixar a ISO
 
-**Versão atual:** Big WindowMaker **Alpha de novembro** (06/11/2026, kernel 6.18).
+**Versão atual:** Big WindowMaker **Alpha de novembro** (12/11/2026, kernel 6.18).
 
 <p align="center">
-  <a href="https://github.com/big-windowmaker/build-iso/releases/tag/big-windowmaker_TESTING_2026-11-06_k618-r35"><img src="https://img.shields.io/badge/Baixar-Alpha%20de%2006%2F11%2F2026-8a2be2?style=for-the-badge" alt="Baixar a Alpha de 06/11/2026"></a>
+  <a href="https://github.com/big-windowmaker/build-iso/releases/tag/big-windowmaker_TESTING_2026-11-12_k618-r41"><img src="https://img.shields.io/badge/Baixar-Alpha%20de%2012%2F11%2F2026-8a2be2?style=for-the-badge" alt="Baixar a Alpha de 12/11/2026"></a>
 </p>
 
 A ISO tem 4,8 GiB e o GitHub limita cada arquivo a 2 GB, por isso ela vem em
@@ -98,10 +98,10 @@ A ISO tem 4,8 GiB e o GitHub limita cada arquivo a 2 GB, por isso ela vem em
 
 | Arquivo | Tamanho |
 |---|---|
-| [`big-windowmaker_TESTING_2026-11-06_k618.iso.7z.001`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-06_k618-r35/big-windowmaker_TESTING_2026-11-06_k618.iso.7z.001) | 2,0 GB |
-| [`big-windowmaker_TESTING_2026-11-06_k618.iso.7z.002`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-06_k618-r35/big-windowmaker_TESTING_2026-11-06_k618.iso.7z.002) | 2,0 GB |
-| [`big-windowmaker_TESTING_2026-11-06_k618.iso.7z.003`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-06_k618-r35/big-windowmaker_TESTING_2026-11-06_k618.iso.7z.003) | 0,9 GB |
-| [`SHA256SUMS`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-06_k618-r35/SHA256SUMS) | somas de verificação |
+| [`big-windowmaker_TESTING_2026-11-12_k618.iso.7z.001`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-12_k618-r41/big-windowmaker_TESTING_2026-11-12_k618.iso.7z.001) | 2,0 GB |
+| [`big-windowmaker_TESTING_2026-11-12_k618.iso.7z.002`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-12_k618-r41/big-windowmaker_TESTING_2026-11-12_k618.iso.7z.002) | 2,0 GB |
+| [`big-windowmaker_TESTING_2026-11-12_k618.iso.7z.003`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-12_k618-r41/big-windowmaker_TESTING_2026-11-12_k618.iso.7z.003) | 0,95 GB |
+| [`SHA256SUMS`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-12_k618-r41/SHA256SUMS) | somas de verificação |
 
 > [!TIP]
 > As ISOs saem como *pre-release*, e o atalho "latest" do GitHub ignora
@@ -116,7 +116,7 @@ A ISO tem 4,8 GiB e o GitHub limita cada arquivo a 2 GB, por isso ela vem em
 ```sh
 # Arch/Manjaro/BigLinux: sudo pacman -S 7zip   ·   Debian/Ubuntu: sudo apt install 7zip
 sha256sum -c SHA256SUMS --ignore-missing          # confere as três partes
-7z x big-windowmaker_TESTING_2026-11-06_k618.iso.7z.001
+7z x big-windowmaker_TESTING_2026-11-12_k618.iso.7z.001
 sha256sum -c SHA256SUMS --ignore-missing          # agora confere também a .iso
 ```
 
@@ -134,7 +134,7 @@ de novo.
 3. Confira a ISO no PowerShell, na pasta dos arquivos:
 
    ```powershell
-   Get-FileHash .\big-windowmaker_TESTING_2026-11-06_k618.iso -Algorithm SHA256
+   Get-FileHash .\big-windowmaker_TESTING_2026-11-12_k618.iso -Algorithm SHA256
    ```
 
 4. O resultado precisa ser igual a:
@@ -151,8 +151,8 @@ de novo.
 ```sh
 brew install sevenzip
 shasum -a 256 -c SHA256SUMS --ignore-missing
-7zz x big-windowmaker_TESTING_2026-11-06_k618.iso.7z.001
-shasum -a 256 big-windowmaker_TESTING_2026-11-06_k618.iso
+7zz x big-windowmaker_TESTING_2026-11-12_k618.iso.7z.001
+shasum -a 256 big-windowmaker_TESTING_2026-11-12_k618.iso
 ```
 
 </details>
@@ -181,7 +181,7 @@ Use o disco inteiro (`/dev/sdb`), não uma partição (`/dev/sdb1`).
 
 ```sh
 lsblk -o NAME,SIZE,MODEL,TRAN
-sudo dd if=big-windowmaker_TESTING_2026-11-06_k618.iso of=/dev/sdX bs=4M status=progress oflag=sync
+sudo dd if=big-windowmaker_TESTING_2026-11-12_k618.iso of=/dev/sdX bs=4M status=progress oflag=sync
 ```
 
 > [!WARNING]
@@ -371,9 +371,10 @@ Achou um erro? Abra uma issue no repositório da parte afetada (lista abaixo;
 na dúvida, no [big-wm](https://github.com/big-windowmaker/big-wm/issues)) com
 o modelo do computador, a sessão (X11 ou Wayland) e o que aconteceu.
 
-## 🔜 Na próxima ISO
+## 🆕 Novo na ISO de 12/11
 
-Prontos e testados, mas **ainda não na ISO que você baixa** hoje:
+Na ISO de 12/11/2026 (testada em máquina virtual, BIOS e UEFI: boot,
+sessão live, instalação pelo Calamares e login nas duas sessões):
 
 <table>
 <tr>
