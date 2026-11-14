@@ -47,11 +47,12 @@
 |---|---|
 | **Duas sessões, a mesma cara** | Window Maker no X11 (padrão, estável) e wlmaker no Wayland (experimental), com o mesmo tema, menus, papel de parede e atalhos. Você escolhe na tela de login. |
 | **Dock, Clip e dockapps** | Dock com relógio, bandeja, volume, CPU, memória e rede; Clip com navegador e arquivos; cerca de 30 dockapps clássicos (wmcube, wmglobe, wmweather, wmmoonclock...) prontos no menu *Aparência > Dockapps*. |
-| **Zonas e mosaico** | [wmake-zones](https://github.com/big-windowmaker/wmake-zones): zonas de encaixe ao arrastar e mosaico automático, também em vários monitores. Vem desligado; liga em *Aparência > Organização de janelas*. |
+| **Zonas e mosaico** | [wmake-zones](https://github.com/big-windowmaker/wmake-zones): zonas de encaixe ao arrastar (já vêm ligadas) e mosaico automático (Super+Shift+Z), também em vários monitores. Ajustes em *Aparência > Organização de janelas*. |
 | **Claro ou escuro** | *Aparência > Tema claro / Tema escuro* muda janelas, menus, Dock, GTK 2/3/4, libadwaita e Qt de uma vez. |
 | **Tudo no estilo NeXTSTEP** | Barras de título do Window Maker em GTK, Qt, Firefox e VSCodium; ícones redesenhados; GRUB e Plymouth no estilo da tela do Window Maker. |
 | **Área de transferência** | **Super+V** abre o histórico, com busca, favoritos e privacidade, nas duas sessões. |
 | **Dock com Abas** | Uma prateleira horizontal com abas, inspirada no OPENSTEP 4.0 beta, com os aplicativos abertos e os favoritos; controlada pelo ladrilho do Dock ([tabbed-dock](https://github.com/big-windowmaker/tabbed-dock)). |
+| **Teclado virtual e controle na tela** | [big-keyboard](https://github.com/big-windowmaker/big-keyboard): teclado na tela (ABNT2, US, US internacional), digitação pelo controle e um controle virtual para telas de toque. No Dock, o ladrilho tem dois botões: **↵** abre o teclado e o **direcional** abre o controle. |
 | **Monitores** | *Configurações > Monitores*: resolução, disposição, perfis por conjunto de monitores e volta automática em 15 s se algo der errado ([big-wm-display-resolution](https://github.com/big-windowmaker/big-wm-display-resolution)). |
 | **Leve** | A sessão X11 de referência usa cerca de 250 MiB de memória (PSS) cinco minutos depois do login. |
 
@@ -86,22 +87,22 @@
 
 ## 📥 Baixar a ISO
 
-**Versão atual:** Big WindowMaker **Alpha de novembro** (12/11/2026, kernel 6.18).
+**Versão atual:** Big WindowMaker **Alpha de novembro** (14/11/2026, kernel 6.18).
 
 <p align="center">
-  <a href="https://github.com/big-windowmaker/build-iso/releases/tag/big-windowmaker_TESTING_2026-11-12_k618-r41"><img src="https://img.shields.io/badge/Baixar-Alpha%20de%2012%2F11%2F2026-8a2be2?style=for-the-badge" alt="Baixar a Alpha de 12/11/2026"></a>
+  <a href="https://github.com/big-windowmaker/build-iso/releases/tag/big-windowmaker_TESTING_2026-11-14_k618-r43"><img src="https://img.shields.io/badge/Baixar-Alpha%20de%2014%2F11%2F2026-8a2be2?style=for-the-badge" alt="Baixar a Alpha de 14/11/2026"></a>
 </p>
 
-A ISO tem 4,8 GiB e o GitHub limita cada arquivo a 2 GB, por isso ela vem em
+A ISO tem 4,8 GiB (5,1 GB) e o GitHub limita cada arquivo a 2 GB, por isso ela vem em
 **três partes `.7z`**. Baixe as três para a mesma pasta, junto com o
 `SHA256SUMS`:
 
 | Arquivo | Tamanho |
 |---|---|
-| [`big-windowmaker_TESTING_2026-11-12_k618.iso.7z.001`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-12_k618-r41/big-windowmaker_TESTING_2026-11-12_k618.iso.7z.001) | 2,0 GB |
-| [`big-windowmaker_TESTING_2026-11-12_k618.iso.7z.002`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-12_k618-r41/big-windowmaker_TESTING_2026-11-12_k618.iso.7z.002) | 2,0 GB |
-| [`big-windowmaker_TESTING_2026-11-12_k618.iso.7z.003`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-12_k618-r41/big-windowmaker_TESTING_2026-11-12_k618.iso.7z.003) | 0,95 GB |
-| [`SHA256SUMS`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-12_k618-r41/SHA256SUMS) | somas de verificação |
+| [`big-windowmaker_TESTING_2026-11-14_k618.iso.7z.001`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-14_k618-r43/big-windowmaker_TESTING_2026-11-14_k618.iso.7z.001) | 2,0 GB |
+| [`big-windowmaker_TESTING_2026-11-14_k618.iso.7z.002`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-14_k618-r43/big-windowmaker_TESTING_2026-11-14_k618.iso.7z.002) | 2,0 GB |
+| [`big-windowmaker_TESTING_2026-11-14_k618.iso.7z.003`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-14_k618-r43/big-windowmaker_TESTING_2026-11-14_k618.iso.7z.003) | 0,95 GB |
+| [`SHA256SUMS`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-14_k618-r43/SHA256SUMS) | somas de verificação |
 
 > [!TIP]
 > As ISOs saem como *pre-release*, e o atalho "latest" do GitHub ignora
@@ -116,7 +117,7 @@ A ISO tem 4,8 GiB e o GitHub limita cada arquivo a 2 GB, por isso ela vem em
 ```sh
 # Arch/Manjaro/BigLinux: sudo pacman -S 7zip   ·   Debian/Ubuntu: sudo apt install 7zip
 sha256sum -c SHA256SUMS --ignore-missing          # confere as três partes
-7z x big-windowmaker_TESTING_2026-11-12_k618.iso.7z.001
+7z x big-windowmaker_TESTING_2026-11-14_k618.iso.7z.001
 sha256sum -c SHA256SUMS --ignore-missing          # agora confere também a .iso
 ```
 
@@ -134,13 +135,13 @@ de novo.
 3. Confira a ISO no PowerShell, na pasta dos arquivos:
 
    ```powershell
-   Get-FileHash .\big-windowmaker_TESTING_2026-11-12_k618.iso -Algorithm SHA256
+   Get-FileHash .\big-windowmaker_TESTING_2026-11-14_k618.iso -Algorithm SHA256
    ```
 
 4. O resultado precisa ser igual a:
 
    ```text
-   6C9BBBFB198F5A914EDC4557C5BA790575C1335CD0329912633A6C201C907151
+   D30547A77D81EA82115831191A9905AAEFA41189007D89AE5693444488D61ADD
    ```
 
 </details>
@@ -151,14 +152,14 @@ de novo.
 ```sh
 brew install sevenzip
 shasum -a 256 -c SHA256SUMS --ignore-missing
-7zz x big-windowmaker_TESTING_2026-11-12_k618.iso.7z.001
-shasum -a 256 big-windowmaker_TESTING_2026-11-12_k618.iso
+7zz x big-windowmaker_TESTING_2026-11-14_k618.iso.7z.001
+shasum -a 256 big-windowmaker_TESTING_2026-11-14_k618.iso
 ```
 
 </details>
 
 SHA-256 da ISO:
-`6c9bbbfb198f5a914edc4557c5ba790575c1335cd0329912633a6c201c907151`
+`d30547a77d81ea82115831191a9905aaefa41189007d89ae5693444488d61add`
 
 ## 💾 Gravar no pendrive
 
@@ -181,7 +182,7 @@ Use o disco inteiro (`/dev/sdb`), não uma partição (`/dev/sdb1`).
 
 ```sh
 lsblk -o NAME,SIZE,MODEL,TRAN
-sudo dd if=big-windowmaker_TESTING_2026-11-12_k618.iso of=/dev/sdX bs=4M status=progress oflag=sync
+sudo dd if=big-windowmaker_TESTING_2026-11-14_k618.iso of=/dev/sdX bs=4M status=progress oflag=sync
 ```
 
 > [!WARNING]
@@ -198,20 +199,22 @@ sudo dd if=big-windowmaker_TESTING_2026-11-12_k618.iso of=/dev/sdX bs=4M status=
 3. No menu da ISO, deixe **1 - Start Big WindowMaker (recommended)**. Se a tela
    ficar preta com placa NVIDIA, tente **2 - Start without proprietary
    drivers**; outras opções ficam em **3 - More boot options and hardware fixes**.
-4. Um assistente pergunta **idioma**, **teclado** e **tema** (claro ou escuro)
+4. Na tela de login (wdm), o usuário **`bigwindowmaker`** já vem escrito:
+   tecle **Enter**, digite a senha **`big`** e tecle **Enter** de novo.
+5. Um assistente pergunta **idioma**, **teclado** e **tema** (claro ou escuro)
    e abre a sessão live do Window Maker (X11).
 
 | | |
 |---|---|
-| <img src="https://raw.githubusercontent.com/big-windowmaker/.github/main/profile/images/iso-grub.png" alt="Menu de boot da ISO: Big WindowMaker Live, com as opções Start Big WindowMaker (recommended), Start without proprietary drivers, More boot options and hardware fixes, Language, Detect EFI bootloaders e Restart computer"> | <img src="https://raw.githubusercontent.com/big-windowmaker/.github/main/profile/images/iso-assistente-live.png" alt="Assistente do modo live na etapa Tema: Tema claro e Tema escuro, com a opção Áudio JamesDSP"> |
-| Menu de boot da ISO | Assistente do live: idioma, teclado e tema |
+| <img src="https://raw.githubusercontent.com/big-windowmaker/.github/main/profile/images/iso-grub.png" alt="Menu de boot da ISO: Big WindowMaker Live, com as opções Start Big WindowMaker (recommended), Start without proprietary drivers, More boot options and hardware fixes, Language, Detect EFI bootloaders e Restart computer"> | <img src="https://raw.githubusercontent.com/big-windowmaker/.github/main/profile/images/iso-login-live.png" alt="Tela de login wdm do modo live com o usuário bigwindowmaker e a sessão Big WindowMaker Live (X11)"> |
+| Menu de boot da ISO | Login do modo live (wdm): usuário `bigwindowmaker`, senha `big` |
+| <img src="https://raw.githubusercontent.com/big-windowmaker/.github/main/profile/images/iso-assistente-live.png" alt="Assistente do modo live na etapa Tema: Tema claro e Tema escuro, com a opção Áudio JamesDSP"> | <img src="https://raw.githubusercontent.com/big-windowmaker/.github/main/profile/images/iso-sessao-live.png" alt="Sessão live: Clip e dockapps, e o Dock com abas na parte de baixo com Instalar o sistema, Gerenciador de arquivos, Terminal, Navegador, Anotações, Calculadora e Adicionar/remover programas"> |
+| Assistente do live: idioma, teclado e tema | A sessão live, pronta para instalar |
 
-No modo live o usuário é **`community`** e a senha é **`big`** (para o `sudo`).
-Nada é gravado no disco até você instalar.
+No modo live o usuário é **`bigwindowmaker`** e a senha é **`big`** (também
+para o `sudo`). Nada é gravado no disco até você instalar.
 
 ## 🧰 Instalar
-
-<img src="https://raw.githubusercontent.com/big-windowmaker/.github/main/profile/images/iso-sessao-live.png" width="100%" alt="Sessão live: Clip e dockapps, e o Dock com abas na parte de baixo com Instalar o sistema, Gerenciador de arquivos, Terminal, Navegador, Anotações, Calculadora e Adicionar/remover programas">
 
 1. Na sessão live, clique em **Instalar o sistema** (primeiro ícone do Dock
    com abas, embaixo) e depois em **Instalar**.
@@ -225,8 +228,15 @@ Nada é gravado no disco até você instalar.
 | **Partições** | **Apagar disco** usa o disco inteiro (Btrfs + partição EFI). Para manter outro sistema, use **Particionamento manual**. *Criptografar sistema* é opcional: a senha não pode ter acentos nem ç. |
 | **Usuários** | Seu nome, usuário, nome do computador e senha. *Entrar automaticamente* é opcional. |
 | **Resumo** | Revise: até aqui nada foi alterado. Clique em **Instalar**. |
-| **Instalar** | Leva poucos minutos (cerca de 4 numa máquina virtual com SSD). |
+| **Instalar** | Leva poucos minutos (cerca de 4 numa máquina virtual com SSD). Enquanto isso, dá para jogar o **NeuroDefender**, um arcade retrô no próprio instalador. |
 | **Concluir** | Reinicie e retire o pendrive. |
+
+> [!NOTE]
+> **Dá para instalar sem internet.** O instalador avisa que não há conexão,
+> mas a internet não é obrigatória. Se o relógio do computador estiver
+> atrasado (bateria da placa-mãe fraca, por exemplo), ele é adiantado até a
+> data das chaves dos pacotes antes da instalação; acerte a hora depois, ou
+> deixe o sistema acertá-la sozinho quando conectar à internet.
 
 <table>
 <tr>
@@ -237,18 +247,24 @@ Nada é gravado no disco até você instalar.
 <td><img src="https://raw.githubusercontent.com/big-windowmaker/.github/main/profile/images/iso-calamares-usuario.png" alt="Calamares na etapa Conta de usuário com nome, usuário, nome do computador e senha preenchidos e a prévia da conta"><br><b>Usuários</b>: conta e senha</td>
 <td><img src="https://raw.githubusercontent.com/big-windowmaker/.github/main/profile/images/iso-calamares-resumo.png" alt="Calamares na etapa Revisão com localização, teclado e o plano de partições antes de instalar"><br><b>Resumo</b>: confira antes de instalar</td>
 </tr>
+<tr>
+<td><img src="https://raw.githubusercontent.com/big-windowmaker/.github/main/profile/images/iso-calamares-neurodefender.png" alt="Calamares instalando, com o jogo NeuroDefender aberto no lugar dos slides e a barra de progresso embaixo"><br><b>Instalar</b>: o NeuroDefender enquanto copia</td>
+<td><img src="https://raw.githubusercontent.com/big-windowmaker/.github/main/profile/images/iso-calamares-concluida.png" alt="Calamares na etapa Concluir: Instalação concluída, com o botão Reiniciar o sistema"><br><b>Concluir</b>: reinicie no sistema novo</td>
+</tr>
 </table>
 
 ## 👋 Primeiros passos
 
-**Escolha a sessão na tela de login.** Selecione o usuário, abra a lista
+**Escolha a sessão na tela de login (wdm).** Escolha o usuário, abra a lista
 **Sessão (F2)** e escolha **Big WindowMaker (X11)** (padrão, mais completo) ou
-**Big WindowMaker (Wayland)** (experimental).
+**Big WindowMaker (Wayland)** (experimental); depois digite a senha.
 
 | | |
 |---|---|
-| <img src="https://raw.githubusercontent.com/big-windowmaker/.github/main/profile/images/iso-login-sessao.png" alt="Tela de login com o usuário escolhido e a lista Sessão (F2) em Big WindowMaker (Wayland)"> | <img src="https://raw.githubusercontent.com/big-windowmaker/.github/main/profile/images/iso-instalado-wayland.png" alt="Sistema instalado na sessão Wayland: Clip e dockapps à esquerda, Dock à direita, gerenciador de arquivos e calculadora, e o Dock com abas embaixo"> |
-| Tela de login: escolha da sessão | Sistema instalado, sessão Wayland |
+| <img src="https://raw.githubusercontent.com/big-windowmaker/.github/main/profile/images/iso-login-sessao.png" alt="Tela de login wdm do sistema instalado, em português: Bem-vindo ao big-pc, usuário Big WindowMaker (big) e Sessão (F2) Big WindowMaker (X11)"> | <img src="https://raw.githubusercontent.com/big-windowmaker/.github/main/profile/images/iso-instalado-x11.png" alt="Sistema instalado na sessão X11: Clip à esquerda, Dock com dockapps à direita e o Dock com abas embaixo"> |
+| Tela de login do sistema instalado (wdm) | Sistema instalado, sessão X11 |
+| <img src="https://raw.githubusercontent.com/big-windowmaker/.github/main/profile/images/iso-instalado-wayland.png" alt="Sistema instalado na sessão Wayland: Clip e dockapps à esquerda, Dock à direita, gerenciador de arquivos e calculadora, e o Dock com abas embaixo"> | <img src="https://raw.githubusercontent.com/big-windowmaker/.github/main/profile/images/x11-wprefs.png" alt="WPrefs, o painel de preferências do Window Maker"> |
+| Sessão Wayland (ISO de 12/11) | WPrefs, as preferências do Window Maker (X11) |
 
 **O básico do Window Maker**
 
@@ -262,21 +278,20 @@ Nada é gravado no disco até você instalar.
 - **WPrefs** (*Configurações*, só no X11) ajusta foco, janelas, menus, teclado
   e mouse.
 
-<img src="https://raw.githubusercontent.com/big-windowmaker/.github/main/profile/images/x11-wprefs.png" width="480" alt="WPrefs, o painel de preferências do Window Maker">
-
 **Atalhos principais**
 
 | Ação | Atalho |
 |---|---|
 | Menu principal | clique direito na área de trabalho / F12 |
-| Buscar aplicativos | Super+Espaço |
+| Buscar aplicativos | Alt+Espaço (no Wayland também Super+Espaço) |
 | Terminal | Ctrl+Alt+T |
 | Arquivos | Super+E |
 | Histórico da área de transferência | Super+V |
 | Bloquear a tela | Super+L |
-| Captura de tela / de uma área | Print / Shift+Print |
+| Captura: tela / janela / área | Print / Alt+Print / Shift+Print |
 | Alternar janelas | Alt+Tab |
 | Fechar a janela | Alt+F4 |
+| Escolher a zona pelo teclado | Super+Z |
 | Mosaico automático liga/desliga | Super+Shift+Z |
 | Mover a janela para a zona ao lado | Super+Ctrl+setas |
 
@@ -354,7 +369,17 @@ lista **Sessão (F2)** da tela de login. Em máquina virtual, ligue a aceleraç�
 <details>
 <summary><b>Qual a senha do modo live?</b></summary>
 
-Usuário `community`, senha `big`.
+Usuário `bigwindowmaker`, senha `big`. (Nas ISOs de 06/11 e 12/11, que
+entravam pelo LightDM, era `community`/`big`.)
+</details>
+
+<details>
+<summary><b>A instalação sem internet falhou em <code>pacman-key --populate</code></b></summary>
+
+Aconteceu nas ISOs anteriores a 14/11 com o relógio do computador atrasado:
+as chaves dos pacotes pareciam "criadas no futuro". Use a ISO de 14/11, que
+adianta o relógio sozinha nesse caso, ou acerte a data no firmware (BIOS/UEFI)
+antes de instalar.
 </details>
 
 <details>
@@ -371,30 +396,28 @@ Achou um erro? Abra uma issue no repositório da parte afetada (lista abaixo;
 na dúvida, no [big-wm](https://github.com/big-windowmaker/big-wm/issues)) com
 o modelo do computador, a sessão (X11 ou Wayland) e o que aconteceu.
 
-## 🆕 Novo na ISO de 12/11
+## 🆕 Novo na ISO de 14/11
 
-Na ISO de 12/11/2026 (testada em máquina virtual, BIOS e UEFI: boot,
-sessão live, instalação pelo Calamares e login nas duas sessões):
+Na ISO de 14/11/2026 (testada em máquina virtual, BIOS e UEFI: boot, login
+do modo live, sessão live, instalação pelo Calamares e login nas duas
+sessões; e, numa máquina virtual sem rede e com o relógio atrasado, uma
+instalação completa com as correções do instalador que esta ISO traz):
 
-<table>
-<tr>
-<td width="50%"><img src="https://raw.githubusercontent.com/big-windowmaker/.github/main/profile/images/em-breve-welcome.png" alt="Janela Apresentando o Big WindowMaker, o tutorial do primeiro login, na página Bem-vindo"><br><b>Boas-vindas</b>: o tutorial do primeiro login, no estilo dos anos 90</td>
-<td width="50%"><img src="https://raw.githubusercontent.com/big-windowmaker/.github/main/profile/images/em-breve-display-resolution.png" alt="Big WM Display Resolution com o desenho dos monitores, perfil, resolução, frequência, escala, orientação e posição"><br><b>Display Resolution</b>: monitores, perfis e reversão automática</td>
-</tr>
-</table>
-
-- Os dockapps do X11 no Wayland, iguais aos do X11, e ícones de aplicativos
-  (appicons) no Wayland.
-- Moldura do Window Maker em todas as janelas, inclusive Steam e Chrome.
-- Lupa e zoom de acessibilidade (Ctrl+Alt+rolagem), localizar o ponteiro ao
-  sacudir o mouse e Ctrl+Alt+Esc para fechar um programa travado.
-- Menu Configurações reorganizado e tradução revisada.
-- Instalador com a identidade visual do Big WindowMaker e o Sobre da edição.
-- Menus de contexto e submenus no lugar no Wayland (o do GParted ia longe,
-  embaixo à direita), invertendo perto da borda do monitor.
-- Dock com Abas 0.3.0: o controlador redesenhado como painel OPENSTEP e a
-  janela Sobre; wmake-zones 0.4.0 com mosaico para GTK4 e dockapp LCD.
-- Monitores ligados e desligados com a sessão aberta (X11 e Wayland).
+- **Tela de login wdm** no modo live e no sistema instalado, e uma tela de
+  login de reserva habilitada sozinha se uma atualização remover a que está
+  em uso (antes, o computador caía no terminal).
+- **Instalador:** abre pela sessão do wdm e instala sem internet, mesmo com o
+  relógio atrasado; o **NeuroDefender**, um arcade retrô, no lugar dos slides.
+- **Teclado virtual e controle na tela** ([big-keyboard](https://github.com/big-windowmaker/big-keyboard)),
+  com o ladrilho de dois botões no Dock (↵ teclado, direcional controle).
+- **Área de transferência:** quando o programa que copiou fecha, volta a
+  última cópia, nunca um favorito ou um item antigo.
+- **Window Maker 26:** cliques que atravessavam janelas transparentes
+  (como as dos teclados na tela) chegam ao lugar certo.
+- **wlmaker 36:** o virt-manager e outros clientes SPICE não derrubam mais a
+  sessão Wayland ao capturar o ponteiro.
+- Thunar 4.21, Dock com Abas 0.3.1, wmcube respondendo ao clique e READMEs
+  revisados em todos os repositórios.
 
 ## 📦 Repositórios
 
@@ -403,6 +426,8 @@ sessão live, instalação pelo Calamares e login nas duas sessões):
 | [big-wm](https://github.com/big-windowmaker/big-wm) | Sessões, configuração padrão, temas e integração do desktop | [![CI](https://github.com/big-windowmaker/big-wm/actions/workflows/ci.yml/badge.svg)](https://github.com/big-windowmaker/big-wm/actions/workflows/ci.yml) |
 | [packages](https://github.com/big-windowmaker/packages) | PKGBUILDs: Window Maker, wlmaker, wmake-zones, dockapps | [![build](https://github.com/big-windowmaker/packages/actions/workflows/build.yml/badge.svg)](https://github.com/big-windowmaker/packages/actions/workflows/build.yml) |
 | [big-wm-display-resolution](https://github.com/big-windowmaker/big-wm-display-resolution) | Monitores: resolução, disposição, perfis e reversão segura (X11 e Wayland) | [![CI](https://github.com/big-windowmaker/big-wm-display-resolution/actions/workflows/ci.yml/badge.svg)](https://github.com/big-windowmaker/big-wm-display-resolution/actions/workflows/ci.yml) |
+| [big-keyboard](https://github.com/big-windowmaker/big-keyboard) | Teclado virtual, digitação pelo controle e controle na tela (X11 e Wayland) | [![CI](https://github.com/big-windowmaker/big-keyboard/actions/workflows/ci.yml/badge.svg)](https://github.com/big-windowmaker/big-keyboard/actions/workflows/ci.yml) |
+| [big-trust-alt](https://github.com/big-windowmaker/big-trust-alt) | Abrir programas do Windows com segurança: análise do arquivo e alternativas para Linux | |
 | [tabbed-dock](https://github.com/big-windowmaker/tabbed-dock) | Dock horizontal com abas e o controlador no Dock (X11 e Wayland) | [![CI](https://github.com/big-windowmaker/tabbed-dock/actions/workflows/ci.yml/badge.svg)](https://github.com/big-windowmaker/tabbed-dock/actions/workflows/ci.yml) |
 | [wmake-zones](https://github.com/big-windowmaker/wmake-zones) | Zonas de encaixe e mosaico de janelas (X11 e Wayland) | [![CI](https://github.com/big-windowmaker/wmake-zones/actions/workflows/ci.yml/badge.svg)](https://github.com/big-windowmaker/wmake-zones/actions/workflows/ci.yml) |
 | [build-iso](https://github.com/big-windowmaker/build-iso) | Geração da ISO, boot em VMs e teste de instalação (BIOS e UEFI) | [![Build ISO](https://github.com/big-windowmaker/build-iso/actions/workflows/build-iso.yml/badge.svg)](https://github.com/big-windowmaker/build-iso/actions/workflows/build-iso.yml) |
@@ -460,7 +485,8 @@ with two sessions that share one look: **X11** with Window Maker (default,
 stable) and **Wayland** with [wlmaker](https://github.com/phkaeser/wlmaker)
 (experimental). It brings a Dock with classic dockapps, a tabbed dock,
 snap zones and tiling, light and dark themes across GTK, libadwaita and Qt,
-clipboard history and a monitor manager, all in the NeXTSTEP style. Try the
+clipboard history, an on-screen keyboard and gamepad, and a monitor manager,
+all in the NeXTSTEP style. Try the
 Alpha test ISO from [build-iso releases](https://github.com/big-windowmaker/build-iso/releases)
 in live mode or a virtual machine first. Maintainers: Rafael Ruscher and
 Barnabé Di Kartola. Special thanks to Alfredo Kojima (Window Maker),
