@@ -400,8 +400,8 @@ o SSH, o compartilhamento de arquivos e outras conexões. Para ligar (com as
 regras do Samba e do mDNS já prontas):
 
 ```sh
+sudo ufw allow 22/tcp     # antes de ligar, se for acessar este computador por SSH
 sudo ufw enable
-sudo ufw allow 22/tcp     # só se for acessar este computador por SSH
 ```
 
 Ele continua ligado depois de reiniciar; `sudo ufw disable` desliga.
