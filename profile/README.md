@@ -90,7 +90,7 @@
 **Versão atual:** Big WindowMaker **Alpha de novembro** (15/11/2026, kernel 6.18).
 
 <p align="center">
-  <a href="https://github.com/big-windowmaker/build-iso/releases/tag/big-windowmaker_TESTING_2026-11-15_k618-r44"><img src="https://img.shields.io/badge/Baixar-Alpha%20de%2015%2F11%2F2026-8a2be2?style=for-the-badge" alt="Baixar a Alpha de 15/11/2026"></a>
+  <a href="https://github.com/big-windowmaker/build-iso/releases/tag/big-windowmaker_TESTING_2026-11-15_k618-r45"><img src="https://img.shields.io/badge/Baixar-Alpha%20de%2015%2F11%2F2026-8a2be2?style=for-the-badge" alt="Baixar a Alpha de 15/11/2026"></a>
 </p>
 
 A ISO tem 4,8 GiB (5,1 GB) e o GitHub limita cada arquivo a 2 GB, por isso ela vem em
@@ -99,10 +99,10 @@ A ISO tem 4,8 GiB (5,1 GB) e o GitHub limita cada arquivo a 2 GB, por isso ela v
 
 | Arquivo | Tamanho |
 |---|---|
-| [`big-windowmaker_TESTING_2026-11-15_k618.iso.7z.001`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-15_k618-r44/big-windowmaker_TESTING_2026-11-15_k618.iso.7z.001) | 2,0 GB |
-| [`big-windowmaker_TESTING_2026-11-15_k618.iso.7z.002`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-15_k618-r44/big-windowmaker_TESTING_2026-11-15_k618.iso.7z.002) | 2,0 GB |
-| [`big-windowmaker_TESTING_2026-11-15_k618.iso.7z.003`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-15_k618-r44/big-windowmaker_TESTING_2026-11-15_k618.iso.7z.003) | 0,95 GB |
-| [`SHA256SUMS`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-15_k618-r44/SHA256SUMS) | somas de verificação |
+| [`big-windowmaker_TESTING_2026-11-15_k618.iso.7z.001`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-15_k618-r45/big-windowmaker_TESTING_2026-11-15_k618.iso.7z.001) | 2,0 GB |
+| [`big-windowmaker_TESTING_2026-11-15_k618.iso.7z.002`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-15_k618-r45/big-windowmaker_TESTING_2026-11-15_k618.iso.7z.002) | 2,0 GB |
+| [`big-windowmaker_TESTING_2026-11-15_k618.iso.7z.003`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-15_k618-r45/big-windowmaker_TESTING_2026-11-15_k618.iso.7z.003) | 0,95 GB |
+| [`SHA256SUMS`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-15_k618-r45/SHA256SUMS) | somas de verificação |
 
 > [!TIP]
 > As ISOs saem como *pre-release*, e o atalho "latest" do GitHub ignora
@@ -141,7 +141,7 @@ de novo.
 4. O resultado precisa ser igual a:
 
    ```text
-   D40892A172AA7BFA49B1795A9B00C17A173B9BB0508D06A8598398EAB30D009B
+   D156C0D81141257423281DB4B7956B38F488C87479F56717DAC1327684E15756
    ```
 
 </details>
@@ -159,7 +159,7 @@ shasum -a 256 big-windowmaker_TESTING_2026-11-15_k618.iso
 </details>
 
 SHA-256 da ISO:
-`d40892a172aa7bfa49b1795a9b00c17a173b9bb0508d06a8598398eab30d009b`
+`d156c0d81141257423281db4b7956b38f488c87479f56717dac1327684e15756`
 
 ## 💾 Gravar no pendrive
 
@@ -434,19 +434,25 @@ Na ISO de 15/11/2026 (testada em máquina virtual, BIOS e UEFI: boot, login
 do modo live, sessão live, instalação pelo Calamares e login nas duas
 sessões), com as correções vindas de testes num computador real:
 
-- **Teclado virtual 0.2.0** ([big-keyboard](https://github.com/big-windowmaker/big-keyboard)):
+- **Teclado virtual 0.2.1** ([big-keyboard](https://github.com/big-windowmaker/big-keyboard)):
   janela com a moldura do Window Maker, que pode ir para qualquer lugar ou
-  ficar encaixada embaixo; coluna de botões grandes; abrir ao tocar num campo
-  de texto; o controle na tela por cima de jogos em tela cheia; trocar entre
-  teclado e controle por um botão; e toque remoto pelo celular (Moonlight).
+  ficar encaixada embaixo, e que nasce acima do Dock com Abas; coluna de
+  botões grandes; abrir ao tocar num campo de texto; o controle na tela por
+  cima de jogos em tela cheia, com cinco estilos e botões de Xbox,
+  PlayStation ou Nintendo; trocar entre teclado e controle por um botão; o
+  celular como teclado, controle e mouse (Moonlight); e o dockapp agora pode
+  ser arrastado no Wayland.
+- **Tela de bloqueio:** o teclado virtual também aparece nela, e a senha
+  pode ser digitada em qualquer monitor.
 - **Boas-vindas e lupa** de volta: os pacotes `big-wm-welcome` e `big-wm-zoom`
   tinham ficado fora da ISO de 14/11 (o menu dava "não encontrado").
 - **Firewall desligado por padrão** (veja como ligar em Problemas comuns).
-- **Steam e jogos no Wayland** (wlmaker 39): a janela Propriedades da Steam
-  aparece, os jogos ficam em tela cheia e abrem no monitor escolhido, e o
+- **Steam e jogos no Wayland** (wlmaker 40): a janela Propriedades da Steam
+  aparece, os jogos ficam em tela cheia e abrem no monitor escolhido (também
+  os que pedem tela cheia antes de abrir, como `mpv --fs` e jogos SDL), e o
   teclado e o controle na tela ficam por cima deles.
 - **Dock e Clip mais limpos:** o Dock com Abas não aparece repetido no Clip
-  nem como ícone solto; o medidor de bateria só aparece em quem tem bateria;
+  nem como ícone solto, e o teclado virtual não deixa um ícone solto no X11; o medidor de bateria só aparece em quem tem bateria;
   o dockapp de zonas volta a ser arrastável no Wayland (wmake-zones 0.4.1).
 - **Ícones próprios** para Buscar aplicativos, Área de transferência e Tela
   de bloqueio no Dock com Abas e nos ícones de aplicativos.
