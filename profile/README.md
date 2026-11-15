@@ -87,10 +87,10 @@
 
 ## 📥 Baixar a ISO
 
-**Versão atual:** Big WindowMaker **Alpha de novembro** (14/11/2026, kernel 6.18).
+**Versão atual:** Big WindowMaker **Alpha de novembro** (15/11/2026, kernel 6.18).
 
 <p align="center">
-  <a href="https://github.com/big-windowmaker/build-iso/releases/tag/big-windowmaker_TESTING_2026-11-14_k618-r43"><img src="https://img.shields.io/badge/Baixar-Alpha%20de%2014%2F11%2F2026-8a2be2?style=for-the-badge" alt="Baixar a Alpha de 14/11/2026"></a>
+  <a href="https://github.com/big-windowmaker/build-iso/releases/tag/big-windowmaker_TESTING_2026-11-15_k618-r44"><img src="https://img.shields.io/badge/Baixar-Alpha%20de%2015%2F11%2F2026-8a2be2?style=for-the-badge" alt="Baixar a Alpha de 15/11/2026"></a>
 </p>
 
 A ISO tem 4,8 GiB (5,1 GB) e o GitHub limita cada arquivo a 2 GB, por isso ela vem em
@@ -99,10 +99,10 @@ A ISO tem 4,8 GiB (5,1 GB) e o GitHub limita cada arquivo a 2 GB, por isso ela v
 
 | Arquivo | Tamanho |
 |---|---|
-| [`big-windowmaker_TESTING_2026-11-14_k618.iso.7z.001`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-14_k618-r43/big-windowmaker_TESTING_2026-11-14_k618.iso.7z.001) | 2,0 GB |
-| [`big-windowmaker_TESTING_2026-11-14_k618.iso.7z.002`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-14_k618-r43/big-windowmaker_TESTING_2026-11-14_k618.iso.7z.002) | 2,0 GB |
-| [`big-windowmaker_TESTING_2026-11-14_k618.iso.7z.003`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-14_k618-r43/big-windowmaker_TESTING_2026-11-14_k618.iso.7z.003) | 0,95 GB |
-| [`SHA256SUMS`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-14_k618-r43/SHA256SUMS) | somas de verificação |
+| [`big-windowmaker_TESTING_2026-11-15_k618.iso.7z.001`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-15_k618-r44/big-windowmaker_TESTING_2026-11-15_k618.iso.7z.001) | 2,0 GB |
+| [`big-windowmaker_TESTING_2026-11-15_k618.iso.7z.002`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-15_k618-r44/big-windowmaker_TESTING_2026-11-15_k618.iso.7z.002) | 2,0 GB |
+| [`big-windowmaker_TESTING_2026-11-15_k618.iso.7z.003`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-15_k618-r44/big-windowmaker_TESTING_2026-11-15_k618.iso.7z.003) | 0,95 GB |
+| [`SHA256SUMS`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-15_k618-r44/SHA256SUMS) | somas de verificação |
 
 > [!TIP]
 > As ISOs saem como *pre-release*, e o atalho "latest" do GitHub ignora
@@ -117,7 +117,7 @@ A ISO tem 4,8 GiB (5,1 GB) e o GitHub limita cada arquivo a 2 GB, por isso ela v
 ```sh
 # Arch/Manjaro/BigLinux: sudo pacman -S 7zip   ·   Debian/Ubuntu: sudo apt install 7zip
 sha256sum -c SHA256SUMS --ignore-missing          # confere as três partes
-7z x big-windowmaker_TESTING_2026-11-14_k618.iso.7z.001
+7z x big-windowmaker_TESTING_2026-11-15_k618.iso.7z.001
 sha256sum -c SHA256SUMS --ignore-missing          # agora confere também a .iso
 ```
 
@@ -135,13 +135,13 @@ de novo.
 3. Confira a ISO no PowerShell, na pasta dos arquivos:
 
    ```powershell
-   Get-FileHash .\big-windowmaker_TESTING_2026-11-14_k618.iso -Algorithm SHA256
+   Get-FileHash .\big-windowmaker_TESTING_2026-11-15_k618.iso -Algorithm SHA256
    ```
 
 4. O resultado precisa ser igual a:
 
    ```text
-   D30547A77D81EA82115831191A9905AAEFA41189007D89AE5693444488D61ADD
+   D40892A172AA7BFA49B1795A9B00C17A173B9BB0508D06A8598398EAB30D009B
    ```
 
 </details>
@@ -152,14 +152,14 @@ de novo.
 ```sh
 brew install sevenzip
 shasum -a 256 -c SHA256SUMS --ignore-missing
-7zz x big-windowmaker_TESTING_2026-11-14_k618.iso.7z.001
-shasum -a 256 big-windowmaker_TESTING_2026-11-14_k618.iso
+7zz x big-windowmaker_TESTING_2026-11-15_k618.iso.7z.001
+shasum -a 256 big-windowmaker_TESTING_2026-11-15_k618.iso
 ```
 
 </details>
 
 SHA-256 da ISO:
-`d30547a77d81ea82115831191a9905aaefa41189007d89ae5693444488d61add`
+`d40892a172aa7bfa49b1795a9b00c17a173b9bb0508d06a8598398eab30d009b`
 
 ## 💾 Gravar no pendrive
 
@@ -182,7 +182,7 @@ Use o disco inteiro (`/dev/sdb`), não uma partição (`/dev/sdb1`).
 
 ```sh
 lsblk -o NAME,SIZE,MODEL,TRAN
-sudo dd if=big-windowmaker_TESTING_2026-11-14_k618.iso of=/dev/sdX bs=4M status=progress oflag=sync
+sudo dd if=big-windowmaker_TESTING_2026-11-15_k618.iso of=/dev/sdX bs=4M status=progress oflag=sync
 ```
 
 > [!WARNING]
@@ -377,7 +377,7 @@ entravam pelo LightDM, era `community`/`big`.)
 <summary><b>A instalação sem internet falhou em <code>pacman-key --populate</code></b></summary>
 
 Aconteceu nas ISOs anteriores a 14/11 com o relógio do computador atrasado:
-as chaves dos pacotes pareciam "criadas no futuro". Use a ISO de 14/11, que
+as chaves dos pacotes pareciam "criadas no futuro". Use a ISO atual, que
 adianta o relógio sozinha nesse caso, ou acerte a data no firmware (BIOS/UEFI)
 antes de instalar.
 </details>
@@ -392,32 +392,73 @@ livre e use a partição EFI que já existe, montada em `/boot/efi`, **sem
 formatar**.
 </details>
 
+<details>
+<summary><b>Firewall: como ligar</b></summary>
+
+O firewall (`ufw`) vem instalado e **desligado**, para não bloquear sem aviso
+o SSH, o compartilhamento de arquivos e outras conexões. Para ligar (com as
+regras do Samba e do mDNS já prontas):
+
+```sh
+sudo ufw allow 22/tcp     # antes de ligar, se for acessar este computador por SSH
+sudo ufw enable
+```
+
+Ele continua ligado depois de reiniciar; `sudo ufw disable` desliga.
+</details>
+
+<details>
+<summary><b>Computador com Intel antiga (G45, GM45, Q45) travando</b></summary>
+
+Nessas GPUs Intel de 2008 a 2010, o driver de vídeo padrão pode travar a
+GPU ("GPU HANG" no `journalctl -k`) e derrubar a sessão ou congelar o
+computador. O driver próprio da Intel é mais estável nelas:
+
+```sh
+sudo pacman -S xf86-video-intel
+printf 'Section "Device"\n  Identifier "Intel"\n  Driver "intel"\n  Option "AccelMethod" "sna"\nEndSection\n' |
+  sudo tee /etc/X11/xorg.conf.d/20-intel.conf
+```
+
+Para a sessão Wayland, acrescente `WLR_RENDERER=pixman` ao `/etc/environment`.
+Reinicie depois. Para desfazer, apague o arquivo e a linha.
+</details>
+
 Achou um erro? Abra uma issue no repositório da parte afetada (lista abaixo;
 na dúvida, no [big-wm](https://github.com/big-windowmaker/big-wm/issues)) com
 o modelo do computador, a sessão (X11 ou Wayland) e o que aconteceu.
 
-## 🆕 Novo na ISO de 14/11
+## 🆕 Novo na ISO de 15/11
 
-Na ISO de 14/11/2026 (testada em máquina virtual, BIOS e UEFI: boot, login
+Na ISO de 15/11/2026 (testada em máquina virtual, BIOS e UEFI: boot, login
 do modo live, sessão live, instalação pelo Calamares e login nas duas
-sessões; e, numa máquina virtual sem rede e com o relógio atrasado, uma
-instalação completa com as correções do instalador que esta ISO traz):
+sessões), com as correções vindas de testes num computador real:
 
-- **Tela de login wdm** no modo live e no sistema instalado, e uma tela de
-  login de reserva habilitada sozinha se uma atualização remover a que está
-  em uso (antes, o computador caía no terminal).
-- **Instalador:** abre pela sessão do wdm e instala sem internet, mesmo com o
-  relógio atrasado; o **NeuroDefender**, um arcade retrô, no lugar dos slides.
-- **Teclado virtual e controle na tela** ([big-keyboard](https://github.com/big-windowmaker/big-keyboard)),
-  com o ladrilho de dois botões no Dock (↵ teclado, direcional controle).
-- **Área de transferência:** quando o programa que copiou fecha, volta a
-  última cópia, nunca um favorito ou um item antigo.
-- **Window Maker 26:** cliques que atravessavam janelas transparentes
-  (como as dos teclados na tela) chegam ao lugar certo.
-- **wlmaker 36:** o virt-manager e outros clientes SPICE não derrubam mais a
-  sessão Wayland ao capturar o ponteiro.
-- Thunar 4.21, Dock com Abas 0.3.1, wmcube respondendo ao clique e READMEs
-  revisados em todos os repositórios.
+- **Teclado virtual 0.2.0** ([big-keyboard](https://github.com/big-windowmaker/big-keyboard)):
+  janela com a moldura do Window Maker, que pode ir para qualquer lugar ou
+  ficar encaixada embaixo; coluna de botões grandes; abrir ao tocar num campo
+  de texto; o controle na tela por cima de jogos em tela cheia; trocar entre
+  teclado e controle por um botão; e toque remoto pelo celular (Moonlight).
+- **Boas-vindas e lupa** de volta: os pacotes `big-wm-welcome` e `big-wm-zoom`
+  tinham ficado fora da ISO de 14/11 (o menu dava "não encontrado").
+- **Firewall desligado por padrão** (veja como ligar em Problemas comuns).
+- **Steam e jogos no Wayland** (wlmaker 39): a janela Propriedades da Steam
+  aparece, os jogos ficam em tela cheia e abrem no monitor escolhido, e o
+  teclado e o controle na tela ficam por cima deles.
+- **Dock e Clip mais limpos:** o Dock com Abas não aparece repetido no Clip
+  nem como ícone solto; o medidor de bateria só aparece em quem tem bateria;
+  o dockapp de zonas volta a ser arrastável no Wayland (wmake-zones 0.4.1).
+- **Ícones próprios** para Buscar aplicativos, Área de transferência e Tela
+  de bloqueio no Dock com Abas e nos ícones de aplicativos.
+- O **log da instalação** fica em `/var/log/installation.log` no sistema
+  instalado, como a tela final do instalador diz.
+
+**Já desde a ISO de 14/11:** tela de login wdm (com uma tela de login de
+reserva se uma atualização remover a que está em uso); instalação sem
+internet mesmo com o relógio atrasado; o NeuroDefender no instalador; a área
+de transferência devolvendo sempre a última cópia; Window Maker 26 (cliques
+em janelas transparentes no lugar certo); o virt-manager sem derrubar a
+sessão Wayland; Thunar 4.21 e Dock com Abas 0.3.1.
 
 ## 📦 Repositórios
 
