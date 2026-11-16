@@ -90,7 +90,7 @@
 **Versão atual:** Big WindowMaker **Alpha de novembro** (16/11/2026, kernel 6.18).
 
 <p align="center">
-  <a href="https://github.com/big-windowmaker/build-iso/releases/tag/big-windowmaker_TESTING_2026-11-16_k618-r46"><img src="https://img.shields.io/badge/Baixar-Alpha%20de%2016%2F11%2F2026-8a2be2?style=for-the-badge" alt="Baixar a Alpha de 16/11/2026"></a>
+  <a href="https://github.com/big-windowmaker/build-iso/releases/tag/big-windowmaker_TESTING_2026-11-16_k618-r50"><img src="https://img.shields.io/badge/Baixar-Alpha%20de%2016%2F11%2F2026-8a2be2?style=for-the-badge" alt="Baixar a Alpha de 16/11/2026"></a>
 </p>
 
 A ISO tem 4,8 GiB (5,1 GB) e o GitHub limita cada arquivo a 2 GB, por isso ela vem em
@@ -99,10 +99,10 @@ A ISO tem 4,8 GiB (5,1 GB) e o GitHub limita cada arquivo a 2 GB, por isso ela v
 
 | Arquivo | Tamanho |
 |---|---|
-| [`big-windowmaker_TESTING_2026-11-16_k618.iso.7z.001`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-16_k618-r46/big-windowmaker_TESTING_2026-11-16_k618.iso.7z.001) | 2,0 GB |
-| [`big-windowmaker_TESTING_2026-11-16_k618.iso.7z.002`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-16_k618-r46/big-windowmaker_TESTING_2026-11-16_k618.iso.7z.002) | 2,0 GB |
-| [`big-windowmaker_TESTING_2026-11-16_k618.iso.7z.003`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-16_k618-r46/big-windowmaker_TESTING_2026-11-16_k618.iso.7z.003) | 0,95 GB |
-| [`SHA256SUMS`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-16_k618-r46/SHA256SUMS) | somas de verificação |
+| [`big-windowmaker_TESTING_2026-11-16_k618.iso.7z.001`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-16_k618-r50/big-windowmaker_TESTING_2026-11-16_k618.iso.7z.001) | 2,0 GB |
+| [`big-windowmaker_TESTING_2026-11-16_k618.iso.7z.002`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-16_k618-r50/big-windowmaker_TESTING_2026-11-16_k618.iso.7z.002) | 2,0 GB |
+| [`big-windowmaker_TESTING_2026-11-16_k618.iso.7z.003`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-16_k618-r50/big-windowmaker_TESTING_2026-11-16_k618.iso.7z.003) | 0,97 GB |
+| [`SHA256SUMS`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-16_k618-r50/SHA256SUMS) | somas de verificação |
 
 > [!TIP]
 > As ISOs saem como *pre-release*, e o atalho "latest" do GitHub ignora
@@ -456,6 +456,15 @@ sessões), com o que foi medido e corrigido num computador antigo de verdade
   some no meio do caminho. O log da sessão anterior (`wlmaker.log`) é
   guardado para relatar problemas.
 - A lupa não perde mais giros da roda do mouse.
+- **Vídeo Intel antigo (G45/Q45, GMA 4500) sem travar:** o driver `intel`
+  (SNA) passa a ser usado nessas placas no modo live e no sistema instalado;
+  antes, o Xorg travava a placa ("GPU HANG") e a instalação podia parar no
+  meio. No Wayland, essas placas usam o desenho por software (pixman).
+- **Modo live entra direto na sessão**, sem tela de login; uma instalação
+  interrompida não deixa mais partições montadas que impediam tentar de novo.
+- **Resolução do GRUB ajustada ao monitor** no primeiro boot do sistema
+  instalado, e as capturas de tela vão para `Imagens/Capturas de tela`
+  (antes criava uma pasta `Pictures` ao lado de `Imagens`).
 
 **Já desde a ISO de 15/11:** teclado virtual com o controle na tela e o
 celular como controle (Moonlight); o teclado virtual também na tela de
