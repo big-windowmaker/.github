@@ -87,10 +87,10 @@
 
 ## 📥 Baixar a ISO
 
-**Versão atual:** Big WindowMaker **Alpha de novembro** (15/11/2026, kernel 6.18).
+**Versão atual:** Big WindowMaker **Alpha de novembro** (16/11/2026, kernel 6.18).
 
 <p align="center">
-  <a href="https://github.com/big-windowmaker/build-iso/releases/tag/big-windowmaker_TESTING_2026-11-15_k618-r45"><img src="https://img.shields.io/badge/Baixar-Alpha%20de%2015%2F11%2F2026-8a2be2?style=for-the-badge" alt="Baixar a Alpha de 15/11/2026"></a>
+  <a href="https://github.com/big-windowmaker/build-iso/releases/tag/big-windowmaker_TESTING_2026-11-16_k618-r46"><img src="https://img.shields.io/badge/Baixar-Alpha%20de%2016%2F11%2F2026-8a2be2?style=for-the-badge" alt="Baixar a Alpha de 16/11/2026"></a>
 </p>
 
 A ISO tem 4,8 GiB (5,1 GB) e o GitHub limita cada arquivo a 2 GB, por isso ela vem em
@@ -99,10 +99,10 @@ A ISO tem 4,8 GiB (5,1 GB) e o GitHub limita cada arquivo a 2 GB, por isso ela v
 
 | Arquivo | Tamanho |
 |---|---|
-| [`big-windowmaker_TESTING_2026-11-15_k618.iso.7z.001`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-15_k618-r45/big-windowmaker_TESTING_2026-11-15_k618.iso.7z.001) | 2,0 GB |
-| [`big-windowmaker_TESTING_2026-11-15_k618.iso.7z.002`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-15_k618-r45/big-windowmaker_TESTING_2026-11-15_k618.iso.7z.002) | 2,0 GB |
-| [`big-windowmaker_TESTING_2026-11-15_k618.iso.7z.003`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-15_k618-r45/big-windowmaker_TESTING_2026-11-15_k618.iso.7z.003) | 0,95 GB |
-| [`SHA256SUMS`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-15_k618-r45/SHA256SUMS) | somas de verificação |
+| [`big-windowmaker_TESTING_2026-11-16_k618.iso.7z.001`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-16_k618-r46/big-windowmaker_TESTING_2026-11-16_k618.iso.7z.001) | 2,0 GB |
+| [`big-windowmaker_TESTING_2026-11-16_k618.iso.7z.002`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-16_k618-r46/big-windowmaker_TESTING_2026-11-16_k618.iso.7z.002) | 2,0 GB |
+| [`big-windowmaker_TESTING_2026-11-16_k618.iso.7z.003`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-16_k618-r46/big-windowmaker_TESTING_2026-11-16_k618.iso.7z.003) | 0,95 GB |
+| [`SHA256SUMS`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-16_k618-r46/SHA256SUMS) | somas de verificação |
 
 > [!TIP]
 > As ISOs saem como *pre-release*, e o atalho "latest" do GitHub ignora
@@ -117,7 +117,7 @@ A ISO tem 4,8 GiB (5,1 GB) e o GitHub limita cada arquivo a 2 GB, por isso ela v
 ```sh
 # Arch/Manjaro/BigLinux: sudo pacman -S 7zip   ·   Debian/Ubuntu: sudo apt install 7zip
 sha256sum -c SHA256SUMS --ignore-missing          # confere as três partes
-7z x big-windowmaker_TESTING_2026-11-15_k618.iso.7z.001
+7z x big-windowmaker_TESTING_2026-11-16_k618.iso.7z.001
 sha256sum -c SHA256SUMS --ignore-missing          # agora confere também a .iso
 ```
 
@@ -135,7 +135,7 @@ de novo.
 3. Confira a ISO no PowerShell, na pasta dos arquivos:
 
    ```powershell
-   Get-FileHash .\big-windowmaker_TESTING_2026-11-15_k618.iso -Algorithm SHA256
+   Get-FileHash .\big-windowmaker_TESTING_2026-11-16_k618.iso -Algorithm SHA256
    ```
 
 4. O resultado precisa ser igual a:
@@ -152,14 +152,14 @@ de novo.
 ```sh
 brew install sevenzip
 shasum -a 256 -c SHA256SUMS --ignore-missing
-7zz x big-windowmaker_TESTING_2026-11-15_k618.iso.7z.001
-shasum -a 256 big-windowmaker_TESTING_2026-11-15_k618.iso
+7zz x big-windowmaker_TESTING_2026-11-16_k618.iso.7z.001
+shasum -a 256 big-windowmaker_TESTING_2026-11-16_k618.iso
 ```
 
 </details>
 
 SHA-256 da ISO:
-`d156c0d81141257423281db4b7956b38f488c87479f56717dac1327684e15756`
+`cd54e4833c612a75711c13caee82c1c5cda0ada8f9fdf842f2989f9754056698`
 
 ## 💾 Gravar no pendrive
 
@@ -182,7 +182,7 @@ Use o disco inteiro (`/dev/sdb`), não uma partição (`/dev/sdb1`).
 
 ```sh
 lsblk -o NAME,SIZE,MODEL,TRAN
-sudo dd if=big-windowmaker_TESTING_2026-11-15_k618.iso of=/dev/sdX bs=4M status=progress oflag=sync
+sudo dd if=big-windowmaker_TESTING_2026-11-16_k618.iso of=/dev/sdX bs=4M status=progress oflag=sync
 ```
 
 > [!WARNING]
@@ -428,43 +428,44 @@ Achou um erro? Abra uma issue no repositório da parte afetada (lista abaixo;
 na dúvida, no [big-wm](https://github.com/big-windowmaker/big-wm/issues)) com
 o modelo do computador, a sessão (X11 ou Wayland) e o que aconteceu.
 
-## 🆕 Novo na ISO de 15/11
+## 🆕 Novo na ISO de 16/11
 
-Na ISO de 15/11/2026 (testada em máquina virtual, BIOS e UEFI: boot, login
+Na ISO de 16/11/2026 (testada em máquina virtual, BIOS e UEFI: boot, login
 do modo live, sessão live, instalação pelo Calamares e login nas duas
-sessões), com as correções vindas de testes num computador real:
+sessões), com o que foi medido e corrigido num computador antigo de verdade
+(Dell OptiPlex 760: Core 2, vídeo Intel G45, disco rígido):
 
-- **Teclado virtual 0.2.1** ([big-keyboard](https://github.com/big-windowmaker/big-keyboard)):
-  janela com a moldura do Window Maker, que pode ir para qualquer lugar ou
-  ficar encaixada embaixo, e que nasce acima do Dock com Abas; coluna de
-  botões grandes; abrir ao tocar num campo de texto; o controle na tela por
-  cima de jogos em tela cheia, com cinco estilos e botões de Xbox,
-  PlayStation ou Nintendo; trocar entre teclado e controle por um botão; o
-  celular como teclado, controle e mouse (Moonlight); e o dockapp agora pode
-  ser arrastado no Wayland.
-- **Tela de bloqueio:** o teclado virtual também aparece nela, e a senha
-  pode ser digitada em qualquer monitor.
-- **Boas-vindas e lupa** de volta: os pacotes `big-wm-welcome` e `big-wm-zoom`
-  tinham ficado fora da ISO de 14/11 (o menu dava "não encontrado").
-- **Firewall desligado por padrão** (veja como ligar em Problemas comuns).
-- **Steam e jogos no Wayland** (wlmaker 40): a janela Propriedades da Steam
-  aparece, os jogos ficam em tela cheia e abrem no monitor escolhido (também
-  os que pedem tela cheia antes de abrir, como `mpv --fs` e jogos SDL), e o
-  teclado e o controle na tela ficam por cima deles.
-- **Dock e Clip mais limpos:** o Dock com Abas não aparece repetido no Clip
-  nem como ícone solto, e o teclado virtual não deixa um ícone solto no X11; o medidor de bateria só aparece em quem tem bateria;
-  o dockapp de zonas volta a ser arrastável no Wayland (wmake-zones 0.4.1).
-- **Ícones próprios** para Buscar aplicativos, Área de transferência e Tela
-  de bloqueio no Dock com Abas e nos ícones de aplicativos.
-- O **log da instalação** fica em `/var/log/installation.log` no sistema
-  instalado, como a tela final do instalador diz.
+- **Mais leve em computadores antigos:** na sessão X11, o uso de CPU com a
+  área de trabalho parada caiu de 7,2 % para 3,0 % (o compositor `picom`
+  ficava redesenhando a tela sem parar depois de a resolução ser ajustada no
+  login), e a tela de login aparece uns 6 s mais cedo num disco rígido.
+- **Efeitos visuais** (Configurações > Efeitos visuais, sessão X11): liga e
+  desliga o compositor (sombras e transparências); desligado, a máquina fica
+  ainda mais leve, e a escolha vale também nos próximos logins.
+- **Microfone na bandeja e `wmusic` só acordam quando algo muda**, sem
+  consultas periódicas: o item do microfone foi de 58 ticks de CPU e um
+  processo novo a cada 28 s para zero, parado.
+- **Relógio certo no sistema instalado:** a sincronização pela internet
+  (NTP) agora vem ligada; antes, um computador com o relógio da BIOS em hora
+  local ficava 3 h atrasado.
+- **Controle na tela por cima da tela de bloqueio** no Wayland, abaixo da
+  caixa de senha (teclado virtual 0.2.2).
+- **Wayland mais estável** (wlmaker 43): desligar um monitor não derruba
+  mais a sessão; um clique numa janela X11 fica com ela até soltar o botão
+  (arrastar em jogos e na Steam); e o XWayland não trava quando uma janela
+  some no meio do caminho. O log da sessão anterior (`wlmaker.log`) é
+  guardado para relatar problemas.
+- A lupa não perde mais giros da roda do mouse.
 
-**Já desde a ISO de 14/11:** tela de login wdm (com uma tela de login de
-reserva se uma atualização remover a que está em uso); instalação sem
-internet mesmo com o relógio atrasado; o NeuroDefender no instalador; a área
-de transferência devolvendo sempre a última cópia; Window Maker 26 (cliques
-em janelas transparentes no lugar certo); o virt-manager sem derrubar a
-sessão Wayland; Thunar 4.21 e Dock com Abas 0.3.1.
+**Já desde a ISO de 15/11:** teclado virtual com o controle na tela e o
+celular como controle (Moonlight); o teclado virtual também na tela de
+bloqueio; boas-vindas e lupa; firewall desligado por padrão; Steam e jogos
+em tela cheia no monitor certo no Wayland; Dock e Clip sem ícones repetidos;
+ícones próprios no Dock com Abas; o log da instalação em
+`/var/log/installation.log`. **Desde a de 14/11:** tela de login wdm;
+instalação sem internet mesmo com o relógio atrasado; o NeuroDefender no
+instalador; a área de transferência devolvendo sempre a última cópia; Window
+Maker 26; Thunar 4.21 e Dock com Abas 0.3.1.
 
 ## 📦 Repositórios
 
