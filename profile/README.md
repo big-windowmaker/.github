@@ -50,7 +50,7 @@
 | **Zonas e mosaico** | [wmake-zones](https://github.com/big-windowmaker/wmake-zones): zonas de encaixe ao arrastar (já vêm ligadas) e mosaico automático (Super+Shift+Z), também em vários monitores. Ajustes em *Aparência > Organização de janelas*. |
 | **Claro ou escuro** | *Aparência > Tema claro / Tema escuro* muda janelas, menus, Dock, GTK 2/3/4, libadwaita e Qt de uma vez. |
 | **Tudo no estilo NeXTSTEP** | Barras de título do Window Maker em GTK, Qt, Firefox e VSCodium; ícones redesenhados; GRUB e Plymouth no estilo da tela do Window Maker. |
-| **Área de transferência** | **Super+V** abre o histórico, com busca, favoritos e privacidade, nas duas sessões. |
+| **Área de transferência** | **Super+V** abre o histórico, com busca, favoritos e privacidade, nas duas sessões; o botão direito num item copia, favorita ou exclui, sempre igual ao dockapp `wmcliphist`. |
 | **Dock com Abas** | Uma prateleira horizontal com abas, inspirada no OPENSTEP 4.0 beta, com os aplicativos abertos e os favoritos; controlada pelo ladrilho do Dock ([tabbed-dock](https://github.com/big-windowmaker/tabbed-dock)). |
 | **Teclado virtual e controle na tela** | [big-keyboard](https://github.com/big-windowmaker/big-keyboard): teclado na tela (ABNT2, US, US internacional), digitação pelo controle e um controle virtual para telas de toque. No Dock, o ladrilho tem dois botões: **↵** abre o teclado e o **direcional** abre o controle. |
 | **Monitores** | *Configurações > Monitores*: resolução, disposição, perfis por conjunto de monitores e volta automática em 15 s se algo der errado ([big-wm-display-resolution](https://github.com/big-windowmaker/big-wm-display-resolution)). |
@@ -87,10 +87,10 @@
 
 ## 📥 Baixar a ISO
 
-**Versão atual:** Big WindowMaker **Alpha de novembro** (17/11/2026, kernel 6.18).
+**Versão atual:** Big WindowMaker **Alpha de novembro** (21/11/2026, kernel 6.18).
 
 <p align="center">
-  <a href="https://github.com/big-windowmaker/build-iso/releases/tag/big-windowmaker_TESTING_2026-11-17_k618-r51"><img src="https://img.shields.io/badge/Baixar-Alpha%20de%2017%2F11%2F2026-8a2be2?style=for-the-badge" alt="Baixar a Alpha de 17/11/2026"></a>
+  <a href="https://github.com/big-windowmaker/build-iso/releases/tag/big-windowmaker_TESTING_2026-11-21_k618-r57"><img src="https://img.shields.io/badge/Baixar-Alpha%20de%2021%2F11%2F2026-8a2be2?style=for-the-badge" alt="Baixar a Alpha de 21/11/2026"></a>
 </p>
 
 A ISO tem 4,8 GiB (5,1 GB) e o GitHub limita cada arquivo a 2 GB, por isso ela vem em
@@ -99,10 +99,10 @@ A ISO tem 4,8 GiB (5,1 GB) e o GitHub limita cada arquivo a 2 GB, por isso ela v
 
 | Arquivo | Tamanho |
 |---|---|
-| [`big-windowmaker_TESTING_2026-11-17_k618.iso.7z.001`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-17_k618-r51/big-windowmaker_TESTING_2026-11-17_k618.iso.7z.001) | 2,0 GB |
-| [`big-windowmaker_TESTING_2026-11-17_k618.iso.7z.002`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-17_k618-r51/big-windowmaker_TESTING_2026-11-17_k618.iso.7z.002) | 2,0 GB |
-| [`big-windowmaker_TESTING_2026-11-17_k618.iso.7z.003`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-17_k618-r51/big-windowmaker_TESTING_2026-11-17_k618.iso.7z.003) | 0,97 GB |
-| [`SHA256SUMS`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-17_k618-r51/SHA256SUMS) | somas de verificação |
+| [`big-windowmaker_TESTING_2026-11-21_k618.iso.7z.001`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-21_k618-r57/big-windowmaker_TESTING_2026-11-21_k618.iso.7z.001) | 2,0 GB |
+| [`big-windowmaker_TESTING_2026-11-21_k618.iso.7z.002`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-21_k618-r57/big-windowmaker_TESTING_2026-11-21_k618.iso.7z.002) | 2,0 GB |
+| [`big-windowmaker_TESTING_2026-11-21_k618.iso.7z.003`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-21_k618-r57/big-windowmaker_TESTING_2026-11-21_k618.iso.7z.003) | 0,97 GB |
+| [`SHA256SUMS`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-21_k618-r57/SHA256SUMS) | somas de verificação |
 
 > [!TIP]
 > As ISOs saem como *pre-release*, e o atalho "latest" do GitHub ignora
@@ -117,7 +117,7 @@ A ISO tem 4,8 GiB (5,1 GB) e o GitHub limita cada arquivo a 2 GB, por isso ela v
 ```sh
 # Arch/Manjaro/BigLinux: sudo pacman -S 7zip   ·   Debian/Ubuntu: sudo apt install 7zip
 sha256sum -c SHA256SUMS --ignore-missing          # confere as três partes
-7z x big-windowmaker_TESTING_2026-11-17_k618.iso.7z.001
+7z x big-windowmaker_TESTING_2026-11-21_k618.iso.7z.001
 sha256sum -c SHA256SUMS --ignore-missing          # agora confere também a .iso
 ```
 
@@ -135,7 +135,7 @@ de novo.
 3. Confira a ISO no PowerShell, na pasta dos arquivos:
 
    ```powershell
-   Get-FileHash .\big-windowmaker_TESTING_2026-11-17_k618.iso -Algorithm SHA256
+   Get-FileHash .\big-windowmaker_TESTING_2026-11-21_k618.iso -Algorithm SHA256
    ```
 
 4. O resultado precisa ser igual a:
@@ -152,8 +152,8 @@ de novo.
 ```sh
 brew install sevenzip
 shasum -a 256 -c SHA256SUMS --ignore-missing
-7zz x big-windowmaker_TESTING_2026-11-17_k618.iso.7z.001
-shasum -a 256 big-windowmaker_TESTING_2026-11-17_k618.iso
+7zz x big-windowmaker_TESTING_2026-11-21_k618.iso.7z.001
+shasum -a 256 big-windowmaker_TESTING_2026-11-21_k618.iso
 ```
 
 </details>
@@ -182,7 +182,7 @@ Use o disco inteiro (`/dev/sdb`), não uma partição (`/dev/sdb1`).
 
 ```sh
 lsblk -o NAME,SIZE,MODEL,TRAN
-sudo dd if=big-windowmaker_TESTING_2026-11-17_k618.iso of=/dev/sdX bs=4M status=progress oflag=sync
+sudo dd if=big-windowmaker_TESTING_2026-11-21_k618.iso of=/dev/sdX bs=4M status=progress oflag=sync
 ```
 
 > [!WARNING]
@@ -428,47 +428,45 @@ Achou um erro? Abra uma issue no repositório da parte afetada (lista abaixo;
 na dúvida, no [big-wm](https://github.com/big-windowmaker/big-wm/issues)) com
 o modelo do computador, a sessão (X11 ou Wayland) e o que aconteceu.
 
-## 🆕 Novo na ISO de 17/11
+## 🆕 Novo na ISO de 21/11
 
-Na ISO de 17/11/2026 (testada em máquina virtual, BIOS e UEFI: boot, login
-do modo live, sessão live, instalação pelo Calamares e login nas duas
-sessões), com o que foi medido e corrigido num computador antigo de verdade
-(Dell OptiPlex 760: Core 2, vídeo Intel G45, disco rígido):
+Na ISO de 21/11/2026 (testada em máquina virtual, BIOS e UEFI: boot, sessão live, instalação pelo Calamares e login no sistema instalado):
 
-- **Mais leve em computadores antigos:** na sessão X11, o uso de CPU com a
-  área de trabalho parada caiu de 7,2 % para 3,0 % (o compositor `picom`
-  ficava redesenhando a tela sem parar depois de a resolução ser ajustada no
-  login), e a tela de login aparece uns 6 s mais cedo num disco rígido.
-- **Efeitos visuais** (Configurações > Efeitos visuais, sessão X11): liga e
-  desliga o compositor (sombras e transparências); desligado, a máquina fica
-  ainda mais leve, e a escolha vale também nos próximos logins.
-- **Microfone na bandeja e `wmusic` só acordam quando algo muda**, sem
-  consultas periódicas: o item do microfone foi de 58 ticks de CPU e um
-  processo novo a cada 28 s para zero, parado.
-- **Relógio certo no sistema instalado:** a sincronização pela internet
-  (NTP) agora vem ligada; antes, um computador com o relógio da BIOS em hora
-  local ficava 3 h atrasado.
-- **Controle na tela por cima da tela de bloqueio** no Wayland, abaixo da
-  caixa de senha (teclado virtual 0.2.2).
-- **Wayland mais estável** (wlmaker 43): desligar um monitor não derruba
-  mais a sessão; um clique numa janela X11 fica com ela até soltar o botão
-  (arrastar em jogos e na Steam); e o XWayland não trava quando uma janela
-  some no meio do caminho. O log da sessão anterior (`wlmaker.log`) é
-  guardado para relatar problemas.
-- A lupa não perde mais giros da roda do mouse.
-- **Vídeo Intel antigo (G45/Q45, GMA 4500) sem travar:** o driver `intel`
-  (SNA) passa a ser usado nessas placas no modo live e no sistema instalado;
-  antes, o Xorg travava a placa ("GPU HANG") e a instalação podia parar no
-  meio. No Wayland, essas placas usam o desenho por software (pixman).
-- **Modo live entra direto na sessão**, sem tela de login; uma instalação
-  interrompida não deixa mais partições montadas que impediam tentar de novo.
-- **Resolução do GRUB ajustada ao monitor** no primeiro boot do sistema
-  instalado (na ISO anterior isso falhava quando o ajuste inicial do sistema
-  regerava o menu do GRUB ao mesmo tempo), e as capturas de tela vão para
-  `Imagens/Capturas de tela`
-  (antes criava uma pasta `Pictures` ao lado de `Imagens`).
+<p align="center">
+  <img src="https://raw.githubusercontent.com/big-windowmaker/.github/main/profile/images/area-de-transferencia.png" width="560" alt="Janela Área de transferência no estilo Window Maker: cabeçalho Histórico de cópias, busca, abas Histórico e Favoritos, tabela com estrela, conteúdo e data, e o menu do botão direito aberto com Copiar, Adicionar aos favoritos e Excluir">
+</p>
 
-**Já desde a ISO de 15/11:** teclado virtual com o controle na tela e o
+- **Área de transferência nova (Super+V):** painel no estilo do Window
+  Maker, com as abas Histórico e Favoritos. O botão direito num item abre
+  **Copiar**, **Adicionar aos favoritos** (ou **Remover dos favoritos**) e
+  **Excluir**, que tira o item do histórico e dos favoritos; a estrela ao
+  lado do item também marca o favorito. Tudo fica igual, na hora, ao dockapp
+  `wmcliphist` do Dock (favoritos em vermelho), que agora vem sempre
+  instalado.
+- **Central de notificações:** os balões não tiram mais o foco da janela em
+  que você está digitando; o histórico, o "Não perturbe" e o sininho ficam
+  na bandeja; clicar numa notificação leva ao aplicativo. Nas duas sessões.
+- **Wayland mais completo** (wlmaker atualizado sobre a versão mais nova do
+  projeto original): Sair, Reiniciar e Desligar pedem confirmação e oferecem
+  "Salvar a sessão", como no Window Maker; o Dock e o Clip não ficam mais
+  com ladrilhos pretos e voltam sozinhos se caírem; jogos em tela cheia não
+  ficam mais com a tela preta; os dockapps do X11 voltam se o XWayland cair.
+- **Máquinas virtuais:** sem quadrados transparentes nas janelas quando o
+  vídeo da VM não acelera o desenho (o compositor se ajusta sozinho), e o
+  vídeo "VMware compatible" do Proxmox/QEMU agora chega à tela de login.
+- **Teclado virtual 0.2.4:** o celular vira mouse (touchpad) com o teclado
+  e o controle ocultos.
+- **Dock com Abas 0.3.2:** reconhece os aplicativos instalados com o dock
+  aberto.
+- O pedido de senha do sistema não cria mais um ícone extra no Dock (X11);
+  o Blender com placa AMD ganha sozinho o suporte a GPU (HIP); o menu do
+  GRUB da live ganhou a fonte que faltava.
+
+**Já desde a ISO de 17/11:** mais leve em computadores antigos (o
+compositor não fica mais redesenhando a tela parada, e o login aparece mais
+cedo); Configurações > Efeitos visuais; relógio certo no sistema instalado
+(NTP); vídeo Intel G45/Q45 sem travar; modo live direto na sessão;
+resolução do GRUB ajustada ao monitor. **Desde a de 15/11:** teclado virtual com o controle na tela e o
 celular como controle (Moonlight); o teclado virtual também na tela de
 bloqueio; boas-vindas e lupa; firewall desligado por padrão; Steam e jogos
 em tela cheia no monitor certo no Wayland; Dock e Clip sem ícones repetidos;
