@@ -90,7 +90,7 @@
 **Versão atual:** Big WindowMaker **Alpha de novembro** (24/11/2026, kernel 6.18).
 
 <p align="center">
-  <a href="https://github.com/big-windowmaker/build-iso/releases/tag/big-windowmaker_TESTING_2026-11-24_k618-r62"><img src="https://img.shields.io/badge/Baixar-Alpha%20de%2024%2F11%2F2026-8a2be2?style=for-the-badge" alt="Baixar a Alpha de 24/11/2026"></a>
+  <a href="https://github.com/big-windowmaker/build-iso/releases/tag/big-windowmaker_TESTING_2026-11-24_k618-r63"><img src="https://img.shields.io/badge/Baixar-Alpha%20de%2024%2F11%2F2026-8a2be2?style=for-the-badge" alt="Baixar a Alpha de 24/11/2026"></a>
 </p>
 
 A ISO tem 4,9 GiB (5,3 GB) e o GitHub limita cada arquivo a 2 GB, por isso ela vem em
@@ -99,10 +99,10 @@ A ISO tem 4,9 GiB (5,3 GB) e o GitHub limita cada arquivo a 2 GB, por isso ela v
 
 | Arquivo | Tamanho |
 |---|---|
-| [`big-windowmaker_TESTING_2026-11-24_k618.iso.7z.001`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-24_k618-r62/big-windowmaker_TESTING_2026-11-24_k618.iso.7z.001) | 2,0 GB |
-| [`big-windowmaker_TESTING_2026-11-24_k618.iso.7z.002`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-24_k618-r62/big-windowmaker_TESTING_2026-11-24_k618.iso.7z.002) | 2,0 GB |
-| [`big-windowmaker_TESTING_2026-11-24_k618.iso.7z.003`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-24_k618-r62/big-windowmaker_TESTING_2026-11-24_k618.iso.7z.003) | 1,07 GB |
-| [`SHA256SUMS`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-24_k618-r62/SHA256SUMS) | somas de verificação |
+| [`big-windowmaker_TESTING_2026-11-24_k618.iso.7z.001`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-24_k618-r63/big-windowmaker_TESTING_2026-11-24_k618.iso.7z.001) | 2,10 GB |
+| [`big-windowmaker_TESTING_2026-11-24_k618.iso.7z.002`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-24_k618-r63/big-windowmaker_TESTING_2026-11-24_k618.iso.7z.002) | 2,10 GB |
+| [`big-windowmaker_TESTING_2026-11-24_k618.iso.7z.003`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-24_k618-r63/big-windowmaker_TESTING_2026-11-24_k618.iso.7z.003) | 1,07 GB |
+| [`SHA256SUMS`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-24_k618-r63/SHA256SUMS) | somas de verificação |
 
 > [!TIP]
 > As ISOs saem como *pre-release*, e o atalho "latest" do GitHub ignora
@@ -141,7 +141,7 @@ de novo.
 4. O resultado precisa ser igual a:
 
    ```text
-   0598D5D9665674781DEC0F714348E6715FFBC7A55EDA3E7872CEE68A977F7131
+   CBACC9DDD9DD34E81863F72FCCFD5D0632DEF10D0815298458799C6AF42E46BB
    ```
 
 </details>
@@ -159,7 +159,7 @@ shasum -a 256 big-windowmaker_TESTING_2026-11-24_k618.iso
 </details>
 
 SHA-256 da ISO:
-`0598d5d9665674781dec0f714348e6715ffbc7a55eda3e7872cee68a977f7131`
+`cbacc9ddd9dd34e81863f72fccfd5d0632def10d0815298458799c6af42e46bb`
 
 ## 💾 Gravar no pendrive
 
@@ -393,18 +393,29 @@ formatar**.
 </details>
 
 <details>
-<summary><b>Firewall: como ligar</b></summary>
+<summary><b>Firewall</b></summary>
 
-O firewall (`ufw`) vem instalado e **desligado**, para não bloquear sem aviso
-o SSH, o compartilhamento de arquivos e outras conexões. Para ligar (com as
-regras do Samba e do mDNS já prontas):
+O firewall (`ufw`) vem **ligado** no sistema instalado e só aceita conexões
+de fora para o compartilhamento de arquivos (Samba), a descoberta de
+impressoras e compartilhamentos (mDNS) e o SSH, que só responde se você ligar
+o `sshd`. Para liberar outro programa, ou desligar o firewall:
 
 ```sh
-sudo ufw allow 22/tcp     # antes de ligar, se for acessar este computador por SSH
+sudo ufw allow 8080/tcp   # exemplo: libera uma porta
+sudo ufw status           # mostra as regras
+sudo ufw disable          # desliga (sudo ufw enable liga de novo)
+```
+
+Instalado de uma ISO anterior a 24/11? Lá o firewall vem desligado e
+`sudo ufw enable` falha com `UnicodeEncodeError` (um acento no comentário do
+`/etc/ufw/ufw.conf`). Apague o comentário e ligue:
+
+```sh
+sudo sed -i '/^# Big WindowMaker/,/^ENABLED/{/^#/d}' /etc/ufw/ufw.conf
+sudo ufw allow SSH        # se acessar este computador por SSH
 sudo ufw enable
 ```
 
-Ele continua ligado depois de reiniciar; `sudo ufw disable` desliga.
 </details>
 
 <details>
@@ -452,8 +463,12 @@ Na ISO de 24/11/2026 (testada em máquina virtual, BIOS e UEFI: boot, sessão li
   aberto em outra área de trabalho; as zonas do `wmake-zones` aparecem no
   lugar certo também no monitor do Clip.
 - **Intel G45/Q45 (GMA 4500):** o driver intel não usa mais *page flip*
-  nessas placas, para evitar um travamento do kernel 6.18.63 visto numa
-  OptiPlex 760.
+  nessas placas, para evitar um travamento do kernel 6.18.63. Conferido numa
+  OptiPlex 760: live, instalação e 10 boots sem travar.
+- **Rede mais fechada:** o firewall vem ligado (entra só Samba, mDNS e SSH),
+  o dnsmasq não fica mais respondendo DNS para a rede e os espelhos da CDN
+  usam HTTPS. Em instalações anteriores, `sudo ufw enable` dava
+  `UnicodeEncodeError`; veja *Firewall* em [Problemas comuns](#-problemas-comuns).
 
 **Já desde a ISO de 21/11:** área de transferência nova (Super+V) com
 Histórico e Favoritos; central de notificações sem roubar o foco; Sair,
