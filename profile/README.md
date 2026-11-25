@@ -90,7 +90,7 @@
 **Versão atual:** Big WindowMaker **Alpha de novembro** (24/11/2026, kernel 6.18).
 
 <p align="center">
-  <a href="https://github.com/big-windowmaker/build-iso/releases/tag/big-windowmaker_TESTING_2026-11-24_k618-r63"><img src="https://img.shields.io/badge/Baixar-Alpha%20de%2024%2F11%2F2026-8a2be2?style=for-the-badge" alt="Baixar a Alpha de 24/11/2026"></a>
+  <a href="https://github.com/big-windowmaker/build-iso/releases/tag/big-windowmaker_TESTING_2026-11-24_k618-r65"><img src="https://img.shields.io/badge/Baixar-Alpha%20de%2024%2F11%2F2026-8a2be2?style=for-the-badge" alt="Baixar a Alpha de 24/11/2026"></a>
 </p>
 
 A ISO tem 4,9 GiB (5,3 GB) e o GitHub limita cada arquivo a 2 GB, por isso ela vem em
@@ -99,10 +99,10 @@ A ISO tem 4,9 GiB (5,3 GB) e o GitHub limita cada arquivo a 2 GB, por isso ela v
 
 | Arquivo | Tamanho |
 |---|---|
-| [`big-windowmaker_TESTING_2026-11-24_k618.iso.7z.001`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-24_k618-r63/big-windowmaker_TESTING_2026-11-24_k618.iso.7z.001) | 2,10 GB |
-| [`big-windowmaker_TESTING_2026-11-24_k618.iso.7z.002`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-24_k618-r63/big-windowmaker_TESTING_2026-11-24_k618.iso.7z.002) | 2,10 GB |
-| [`big-windowmaker_TESTING_2026-11-24_k618.iso.7z.003`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-24_k618-r63/big-windowmaker_TESTING_2026-11-24_k618.iso.7z.003) | 1,07 GB |
-| [`SHA256SUMS`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-24_k618-r63/SHA256SUMS) | somas de verificação |
+| [`big-windowmaker_TESTING_2026-11-24_k618.iso.7z.001`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-24_k618-r65/big-windowmaker_TESTING_2026-11-24_k618.iso.7z.001) | 2,10 GB |
+| [`big-windowmaker_TESTING_2026-11-24_k618.iso.7z.002`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-24_k618-r65/big-windowmaker_TESTING_2026-11-24_k618.iso.7z.002) | 2,10 GB |
+| [`big-windowmaker_TESTING_2026-11-24_k618.iso.7z.003`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-24_k618-r65/big-windowmaker_TESTING_2026-11-24_k618.iso.7z.003) | 1,07 GB |
+| [`SHA256SUMS`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-24_k618-r65/SHA256SUMS) | somas de verificação |
 
 > [!TIP]
 > As ISOs saem como *pre-release*, e o atalho "latest" do GitHub ignora
@@ -141,7 +141,7 @@ de novo.
 4. O resultado precisa ser igual a:
 
    ```text
-   CBACC9DDD9DD34E81863F72FCCFD5D0632DEF10D0815298458799C6AF42E46BB
+   29419E519DE7E0B743A16336A5D78BF8985F506F8CE7FA5A930D79625A468435
    ```
 
 </details>
@@ -159,7 +159,7 @@ shasum -a 256 big-windowmaker_TESTING_2026-11-24_k618.iso
 </details>
 
 SHA-256 da ISO:
-`cbacc9ddd9dd34e81863f72fccfd5d0632def10d0815298458799c6af42e46bb`
+`29419e519de7e0b743a16336a5d78bf8985f506f8ce7fa5a930d79625a468435`
 
 ## 💾 Gravar no pendrive
 
@@ -444,9 +444,22 @@ o modelo do computador, a sessão (X11 ou Wayland) e o que aconteceu.
 Na ISO de 24/11/2026 (testada em máquina virtual, BIOS e UEFI: boot, sessão live, instalação pelo Calamares e login no sistema instalado; X11 e Wayland medidos em 3 boots cada, com 21 verificações de funcionamento):
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/big-windowmaker/.github/main/profile/images/bloqueio-wayland.png" width="560" alt="Tela de bloqueio do Big WindowMaker na sessão Wayland: fundo desfocado e um painel no estilo Window Maker com o logo, Sessão bloqueada, o usuário, o campo de senha com o botão do teclado na tela e o botão Desbloquear">
+  <img src="https://raw.githubusercontent.com/big-windowmaker/.github/main/profile/images/bloqueio-wdm.png" width="560" alt="Tela de bloqueio nova, igual à tela de login wdm: painel cinza com o logo num quadro afundado, o grupo Sessão bloqueada com o usuário, a máquina e o campo Senha com duas bolinhas, o quadro de mensagens, os grupos Data e Teclado e os botões Cancelar e Desbloquear">
 </p>
 
+- **Tela de bloqueio com a cara da tela de login (wdm)**, no X11 e no
+  Wayland: logo num quadro afundado, grupo *Sessão bloqueada* com o usuário e
+  a máquina, os grupos *Data* e *Teclado* e os botões. A senha aparece como
+  bolinhas ● (dá para trocar em Configurações > Tela de bloqueio), o campo
+  diz só "Digite a senha" e a senha errada mostra "Senha incorreta" também
+  no X11.
+- **Dock e Clip organizados no Wayland:** no Clip, os olhos, o navegador, os
+  arquivos, o terminal, os aplicativos, o histórico da área de transferência,
+  a organização de janelas e o controlador do Dock com Abas; no Dock, relógio,
+  CPU, memória, rede, música, volume, desligar e a bandeja. Vale para contas
+  novas.
+- **Arrastar no Clip:** soltar um ícone em cima de outro põe o ícone ali e
+  empurra os de baixo uma posição (antes, ele voltava para o fim).
 - **Clip em grade, como no Window Maker (Wayland):** dockapps e lançadores
   lado a lado, acima, abaixo e na diagonal, cada um na sua célula, que fica
   guardada. Soltar um ícone abaixo dos outros na coluna do Clip o põe no fim
