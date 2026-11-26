@@ -91,7 +91,7 @@
 **Versão atual:** Big WindowMaker **Alpha de novembro** (26/11/2026, kernel 6.18).
 
 <p align="center">
-  <a href="https://github.com/big-windowmaker/build-iso/releases/tag/big-windowmaker_TESTING_2026-11-26_k618-r70"><img src="https://img.shields.io/badge/Baixar-Alpha%20de%2026%2F11%2F2026-8a2be2?style=for-the-badge" alt="Baixar a Alpha de 26/11/2026"></a>
+  <a href="https://github.com/big-windowmaker/build-iso/releases/tag/big-windowmaker_TESTING_2026-11-26_k618-r71"><img src="https://img.shields.io/badge/Baixar-Alpha%20de%2026%2F11%2F2026-8a2be2?style=for-the-badge" alt="Baixar a Alpha de 26/11/2026"></a>
 </p>
 
 A ISO tem 4,9 GiB (5,3 GB) e o GitHub limita cada arquivo a 2 GB, por isso ela vem em
@@ -100,10 +100,10 @@ A ISO tem 4,9 GiB (5,3 GB) e o GitHub limita cada arquivo a 2 GB, por isso ela v
 
 | Arquivo | Tamanho |
 |---|---|
-| [`big-windowmaker_TESTING_2026-11-26_k618.iso.7z.001`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-26_k618-r70/big-windowmaker_TESTING_2026-11-26_k618.iso.7z.001) | 2,10 GB |
-| [`big-windowmaker_TESTING_2026-11-26_k618.iso.7z.002`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-26_k618-r70/big-windowmaker_TESTING_2026-11-26_k618.iso.7z.002) | 2,10 GB |
-| [`big-windowmaker_TESTING_2026-11-26_k618.iso.7z.003`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-26_k618-r70/big-windowmaker_TESTING_2026-11-26_k618.iso.7z.003) | 1,07 GB |
-| [`SHA256SUMS`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-26_k618-r70/SHA256SUMS) | somas de verificação |
+| [`big-windowmaker_TESTING_2026-11-26_k618.iso.7z.001`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-26_k618-r71/big-windowmaker_TESTING_2026-11-26_k618.iso.7z.001) | 2,10 GB |
+| [`big-windowmaker_TESTING_2026-11-26_k618.iso.7z.002`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-26_k618-r71/big-windowmaker_TESTING_2026-11-26_k618.iso.7z.002) | 2,10 GB |
+| [`big-windowmaker_TESTING_2026-11-26_k618.iso.7z.003`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-26_k618-r71/big-windowmaker_TESTING_2026-11-26_k618.iso.7z.003) | 1,07 GB |
+| [`SHA256SUMS`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-26_k618-r71/SHA256SUMS) | somas de verificação |
 
 > [!TIP]
 > As ISOs saem como *pre-release*, e o atalho "latest" do GitHub ignora
@@ -142,7 +142,7 @@ de novo.
 4. O resultado precisa ser igual a:
 
    ```text
-   4CF2BF357840CB3CCB4884BB628F149C421DCC8B822544A65D959A4FC37B6F5B
+   07AB573C33D1589F85FD41671C092E57F6F95B912359F18FE6C2D71DD398D574
    ```
 
 </details>
@@ -160,7 +160,7 @@ shasum -a 256 big-windowmaker_TESTING_2026-11-26_k618.iso
 </details>
 
 SHA-256 da ISO:
-`4cf2bf357840cb3ccb4884bb628f149c421dcc8b822544a65d959a4fc37b6f5b`
+`07ab573c33d1589f85fd41671c092e57f6f95b912359f18fe6c2d71dd398d574`
 
 ## 💾 Gravar no pendrive
 
@@ -456,6 +456,13 @@ live, instalação pelo Calamares, login e atualização do sistema instalado):
   COMPOSITOR" ao acordar os monitores.
 - **[Guia do usuário](https://github.com/big-windowmaker/big-wm/blob/main/docs/guia-do-usuario.md)**:
   atalhos, Dock, Clip, zonas, aparência, bloqueio e atualizações num só lugar.
+- **Big WindowMaker 1.0.0:** os pacotes do big-wm passam a ter versão
+  semântica (`1:1.0.0…`), e não mais a data do build.
+
+> [!NOTE]
+> A ISO **r71** substitui a r70, do mesmo dia e com o **mesmo nome de
+> arquivo**. Se você baixou a r70, o SHA-256 desta página não vai conferir:
+> baixe de novo pelo botão acima. As duas instalam e atualizam pelo `[big-wm]`.
 
 ### Na ISO de 24/11
 
