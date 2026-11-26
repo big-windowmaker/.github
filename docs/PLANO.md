@@ -25,7 +25,7 @@ Ele é atualizado a cada etapa concluída.
 | Desordem local | 119 worktrees, 51 branches sem upstream, 9 GB de worktrees e 101 pastas em `packages/out`. | Já houve código editado em checkout velho (146 commits atrás do `main`). Uma correção do TTS ficou 17 dias sem publicar. |
 | Documentação | 344 arquivos em `big-wm/docs`, a maior parte capturas e diários de missão. Não há guia do usuário. | Quem usa não encontra atalhos, Dock, Clip, zonas e bloqueio num só lugar. |
 | Versões | O big-wm é versionado por data e hora (`26.11.24-2333`), sem tags e sem changelog. | O usuário não sabe o que mudou entre uma ISO e outra. |
-| Licenças | `tabbed-dock` e `iso-profiles` não têm LICENSE. O GitHub não reconhece a licença de nenhum repositório. | Falta clareza legal para redistribuir. |
+| Licenças | Doze dos 13 repositórios têm a licença reconhecida pelo GitHub. O `iso-profiles` não tem, porque o projeto de origem (big-comm/iso-profiles) não declara licença. O biglinux/iso-profiles adotou GPL-3.0-or-later em 2026-10-02. | Os arquivos herdados não podem ser redistribuídos com segurança enquanto o BigCommunity não declarar uma licença. |
 
 ## Decisões
 
@@ -40,24 +40,25 @@ Ele é atualizado a cada etapa concluída.
 
 ## Frentes de trabalho
 
-Estado: ✅ feito · 🔄 em andamento · ⏳ a fazer · 👤 com o mantenedor
+Estado: ✅ feito · 🔀 PR aberto (aguarda merge) · ⏳ a fazer · 👤 com o mantenedor
 
 ### 1. Repositório pacman assinado
-- ⏳ Gerar a chave (primária offline + subchave na CI) e gravar a subchave como segredo do `repo`.
-- ⏳ Pacote `big-wm-keyring` no `packages`.
-- ⏳ Repo `big-windowmaker/repo`: workflow de publicação (assina o banco e os pacotes, com `repo-add` sem rede) e README com a instalação.
-- ⏳ `windowmaker`: `epoch=1`.
-- ⏳ `iso-profiles`: `[big-wm]` no `pacman.conf` da edição, sem o `IgnorePkg`; `big-wm-keyring` na lista de pacotes.
-- ⏳ Teste: um sistema limpo faz `pacman -Sy` e `pacman -S big-wm-session` com a assinatura conferida, e uma assinatura adulterada é recusada.
+- ✅ Chave criada em 2026-11-26: primária `2F36 D64F 633B BA80 052F  4893 4AF5 FC29 61C2 E4AF` (Ed25519, só certifica, até 2031) e subchave de assinatura `2C5B E454 0995 63AB 4C78  3205 173E 2C09 FC18 33B0` (até 2028). Só a subchave está na CI (segredo `REPO_SIGNING_KEY`).
+- 👤 A chave primária e o certificado de revogação estão em `~/.local/share/big-wm/chave-repositorio/` na máquina do mantenedor. **Copiar para mídia offline**, pôr senha (`gpg --homedir … --edit-key … passwd`) e apagar a cópia do disco.
+- ✅ [big-windowmaker/repo](https://github.com/big-windowmaker/repo): workflow `publicar` (assina pacotes e banco num contêiner sem rede; o release é a fonte da verdade; verificação num Manjaro limpo, que recusa pacote adulterado). Testado localmente com o pacman real. O primeiro run falhou como deveria, por falta do `big-wm-keyring`.
+- 🔀 packages#59: `big-wm-keyring`; `windowmaker` com `epoch=1`; `wdm` exigindo `windowmaker>=1:…`; patch 0032 (o `check()` do Window Maker quebrava com o automake 1.20).
+- 🔀 iso-profiles#31 (`[big-wm]` no `pacman.conf`, sem `IgnorePkg`), biglinux-livecd#19 (Calamares popula a chave), build-iso#20 (chaveiro obrigatório na ISO). Merge **depois** do primeiro run verde do `publicar`.
+- ⏳ Depois do merge da livecd: atualizar o `_commit` do `biglinux-livecd` no `packages`.
 
 ### 2. Retorno dos usuários
-- ⏳ Issues ativadas em todos os repositórios.
-- ⏳ `big-wm-report` (menu + Welcome) e modelo de issue que pede o relatório.
-- ⏳ Coredump ligado na edição.
+- ✅ Issues ativadas em todos os 13 repositórios (2026-11-26). Os modelos da organização (`bug.yml`, `feature.yml`) valem para todos.
+- 🔀 big-wm#71: **Sessão > Relatar problema** (`big-wm-doctor --report`), um relatório sem dados pessoais que abre a issue já preenchida.
+- 🔀 iso-profiles#30: coredumps ligados na edição, com limite (o BigLinux os desliga para os jogos).
 
 ### 3. Upstream
-- ⏳ Triagem dos patches do wlmaker em três grupos: genéricos, funcionalidades aceitáveis no upstream e específicos do Big WM (`packages/wlmaker/UPSTREAM.md`).
-- ⏳ Primeiros PRs ao phkaeser/wlmaker: as correções pequenas e genéricas.
+- 🔀 packages#60: triagem dos 179 patches do wlmaker (`wlmaker/UPSTREAM.md`).
+- ✅ Enviados ao phkaeser/wlmaker: #575, #576, #577, #578 e #579, rebaseados e testados sobre o `main` do upstream (`ctest` 26/26).
+- ⏳ Mandar o 0032 do Window Maker ao upstream (window-maker/wmaker).
 - Meta: metade dos patches fora do `packages` em 3 meses.
 
 ### 4. Revisão humana
@@ -65,20 +66,21 @@ Estado: ✅ feito · 🔄 em andamento · ⏳ a fazer · 👤 com o mantenedor
 - Revisão obrigatória pelo menos em bloqueio, PAM, instalador, `pacman.conf`, polkit e chave do repositório.
 
 ### 5. Ordem local
-- ⏳ `limpar-worktrees`: remove worktrees de branches já mergeados (só com a árvore limpa), lista os branches sem upstream e deixa cada checkout principal no `main`. Por padrão só mostra o que faria (simulação).
+- ✅ `tools/limpar-trabalho-local.sh` (este repositório). Executado em 2026-11-26: 228 worktrees e branches já incorporados removidos, de 119 worktrees para 44. Os branches com trabalho fora do `main` foram só listados.
+- 👤 Decidir os 46 itens listados (worktrees dos forks com alterações, branches antigos não enviados), a imagem de VM de 5,5 GB em `~/.cache/bwm-wt/readme/vm` e os 42 GB de `~/.cache/bwm-perf`.
 
 ### 6. Guia do usuário e versões
-- ⏳ `big-wm/docs/guia-do-usuario.md`: atalhos, Dock, Clip, zonas, bloqueio, atualizações, relatar problema, FAQ.
-- ⏳ Versão semântica no big-wm e notas de versão por ISO.
+- 🔀 big-wm#72: `docs/guia-do-usuario.md`.
+- 🔀 build-iso#19: a seção "O que mudou" das notas de cada ISO passa a ser gerada (pacotes e PRs desde a ISO anterior). O texto fixo de antes estava semanas desatualizado.
+- ⏳ Versão semântica no big-wm, num PR próprio: `epoch=1` nos 11 pacotes, `pkgver` a partir da tag `vX.Y.Z` (`git describe`) e a primeira tag `v1.0.0`. Hoje cada build vira uma "versão" nova (`AA.MM.DD-HHMM`), mesmo sem mudança no código.
 
 ### 7. Legal
-- ⏳ LICENSE no `tabbed-dock` e no `iso-profiles`, com a licença que os arquivos já declaram.
+- 👤 Pedir ao BigCommunity (big-comm/iso-profiles) que declare a licença, como o BigLinux fez (GPL-3.0-or-later). Depois disso, o `iso-profiles` ganha o LICENSE.
 
 ### 8. Erros abertos
-- ✅ (branch) A tela de bloqueio piscava com "INCOMPATIBLE COMPOSITOR" ao acordar os monitores (`big-wm-x11-repaint`).
-- ⏳ `authproto_pam`: "pam_unix(system-auth:account): setuid failed".
-- ⏳ `BadWindow` em `X_GetWindowAttributes` nos módulos do bloqueio quando os monitores mudam com a tela bloqueada.
-- ⏳ Teste: se o módulo de autenticação cair, a tela continua bloqueada.
+- 🔀 big-wm#69: a tela de bloqueio piscava com "INCOMPATIBLE COMPOSITOR" ao acordar os monitores. O `big-wm-x11-repaint` mandava SIGUSR1 ao picom com a tela bloqueada.
+- 🔀 big-wm#70: `BadWindow` no `saver_big_wm` quando os monitores mudam com a tela bloqueada. Testado: se o módulo de autenticação cair (SIGSEGV, SIGKILL), a tela continua bloqueada.
+- ✅ `authproto_pam` "setuid failed": não é erro. O PAM 1.7.3 registra em nível debug e segue. Os erros de nível alto daquele dia vieram de testes de laboratório.
 
 ## Depois dos 30 dias
 - openQA da ISO: boot → instalação → login → bloqueio (já existe o workflow `mirror-openqa-image` no build-iso).
