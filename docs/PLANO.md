@@ -18,14 +18,14 @@ Ele é atualizado a cada etapa concluída.
 | Tema | Fato | Consequência |
 | --- | --- | --- |
 | Atualizações | Os pacotes só existem como artefatos da CI. Não há repositório pacman. Numa máquina instalada, `pacman -Qm` lista 69 pacotes estrangeiros. | Quem instala uma ISO nunca recebe correções: o único jeito é reinstalar. |
-| `windowmaker` | `0.96.0.r130.g558e67f` é **menor** que o `0.96.0-5` do extra no `vercmp`, porque um segmento com letra perde para o fim da string. A ISO escondia isso com `IgnorePkg = windowmaker`. | O pamac trocava o nosso Window Maker pelo oficial. Com o `IgnorePkg`, o pacote não recebe nenhuma atualização, nem as nossas. |
+| `windowmaker` | A ISO segurava o pacote com `IgnorePkg = windowmaker`, para o pamac não o trocar pelo `0.96.0-5` do extra. (Corrigido em 2026-11-26: o levantamento dizia que o `vercmp` dava o nosso `0.96.0.r130.g558e67f` como menor; não dá, ele é maior. O `epoch=1` garante a ordem de qualquer forma.) | Com o `IgnorePkg`, o pacote não recebia nenhuma atualização, nem as nossas. |
 | Forks | 179 patches sobre o wlmaker, 31 sobre o Window Maker e 21 no big-dockapps. Zero PRs ou issues enviados ao upstream. | Cada rebase custa uma rodada. Uma mudança grande no upstream pode nos prender a uma versão velha. |
 | Retorno dos usuários | Nenhuma issue aberta até hoje, contra cerca de 210 PRs. Issues desativadas no wlmaker e no iso-profiles. Coredumps desligados (`Storage=none`). | Só ficamos sabendo de bugs nas nossas 3 máquinas. O bug do bloqueio aconteceu 1028 vezes em um mês sem que ninguém relatasse. |
 | Revisão | Desde outubro, 518 commits no big-wm e 205 no packages, todos de uma só pessoa. Os PRs são aprovados pelo próprio autor. Há cerca de 5 mil linhas de C próprias no caminho da senha (bloqueio). | Fator ônibus (bus factor) = 1. Código de segurança sem segunda revisão. |
 | Desordem local | 119 worktrees, 51 branches sem upstream, 9 GB de worktrees e 101 pastas em `packages/out`. | Já houve código editado em checkout velho (146 commits atrás do `main`). Uma correção do TTS ficou 17 dias sem publicar. |
 | Documentação | 344 arquivos em `big-wm/docs`, a maior parte capturas e diários de missão. Não há guia do usuário. | Quem usa não encontra atalhos, Dock, Clip, zonas e bloqueio num só lugar. |
 | Versões | O big-wm é versionado por data e hora (`26.11.24-2333`), sem tags e sem changelog. | O usuário não sabe o que mudou entre uma ISO e outra. |
-| Licenças | Doze dos 13 repositórios têm a licença reconhecida pelo GitHub. O `iso-profiles` não tem, porque o projeto de origem (big-comm/iso-profiles) não declara licença. O biglinux/iso-profiles adotou GPL-3.0-or-later em 2026-10-02. | Os arquivos herdados não podem ser redistribuídos com segurança enquanto o BigCommunity não declarar uma licença. |
+| Licenças | Doze dos 13 repositórios têm a licença reconhecida pelo GitHub. O `iso-profiles` não tem, porque o projeto de origem (big-comm/iso-profiles) não declara licença. O biglinux/iso-profiles adotou GPL-3.0-or-later em 2026-10-02. | Os arquivos herdados do big-comm continuam sem licença declarada. |
 
 ## Decisões
 
@@ -59,7 +59,7 @@ Estado: ✅ feito (no `main` em 2026-11-26) · ⏳ a fazer · 👤 com o mantene
 ### 3. Upstream
 - ✅ packages#60: triagem dos 179 patches do wlmaker (`wlmaker/UPSTREAM.md`).
 - ✅ Enviados ao phkaeser/wlmaker: #575, #576, #577, #578 e #579, rebaseados e testados sobre o `main` do upstream (`ctest` 26/26).
-- ⏳ Mandar o 0032 do Window Maker ao upstream (window-maker/wmaker).
+- 👤 Mandar o 0032 do Window Maker ao upstream. O Window Maker só aceita patches por e-mail (`wmaker-dev@googlegroups.com`; o GitHub é espelho). O patch está pronto sobre o `master` do upstream, com as instruções, no `packages/out/upstream-wmaker-0032/` do mantenedor.
 - Meta: metade dos patches fora do `packages` em 3 meses.
 
 ### 4. Revisão humana
@@ -73,10 +73,11 @@ Estado: ✅ feito (no `main` em 2026-11-26) · ⏳ a fazer · 👤 com o mantene
 ### 6. Guia do usuário e versões
 - ✅ big-wm#72: `docs/guia-do-usuario.md`.
 - ✅ build-iso#19: a seção "O que mudou" das notas de cada ISO passa a ser gerada (pacotes e PRs desde a ISO anterior). O texto fixo de antes estava semanas desatualizado.
-- ⏳ Versão semântica no big-wm, num PR próprio: `epoch=1` nos 11 pacotes, `pkgver` a partir da tag `vX.Y.Z` (`git describe`) e a primeira tag `v1.0.0`. Hoje cada build vira uma "versão" nova (`AA.MM.DD-HHMM`), mesmo sem mudança no código.
+- ✅ Versão semântica no big-wm (big-wm#73): `epoch=1` nos 11 pacotes e `pkgver` a partir da tag `vX.Y.Z` (`git describe`). A tag `v1.0.0` é o commit dos pacotes da ISO r70. O mesmo commit gera sempre a mesma versão.
 
 ### 7. Legal
-- 👤 Pedir ao BigCommunity (big-comm/iso-profiles) que declare a licença, como o BigLinux fez (GPL-3.0-or-later). Depois disso, o `iso-profiles` ganha o LICENSE.
+- ✅ Decisão do mantenedor (2026-11-26): o `iso-profiles` fica só no big-windowmaker. A edição não será enviada ao big-comm/iso-profiles, e não será pedida licença a eles.
+- 👤 Fica em aberto: os arquivos herdados do big-comm seguem sem licença declarada. Os da edição (`bigcommunity/wmaker/`, `tests/`) são nossos e podem receber a licença que o mantenedor escolher.
 
 ### 8. Erros abertos
 - ✅ big-wm#69: a tela de bloqueio piscava com "INCOMPATIBLE COMPOSITOR" ao acordar os monitores. O `big-wm-x11-repaint` mandava SIGUSR1 ao picom com a tela bloqueada.

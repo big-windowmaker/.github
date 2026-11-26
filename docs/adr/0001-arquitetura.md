@@ -42,7 +42,7 @@ A proposta de 11 repos é reduzida para **6**. Separações sem benefício (skel
 | `wlmaker` | fork upstream (Wayland) | patches enviáveis upstream |
 | `big-wm` (existente) | **monorepo do desktop**: sessões, config padrão em `/usr/share`, temas, wallpapers, menus, calamares, traduções, docs — gera pacotes split | substitui os 4 repos antigos |
 | `packages` | PKGBUILDs: wmaker, wlmaker, big-dockapps, dependências ausentes, keyring | ciclo de build próprio |
-| `build-iso` | workflow da ISO + perfil `wmaker` (até ser aceito em big-comm/iso-profiles) | pipeline separado de pacotes |
+| `build-iso` | workflow da ISO; o perfil `wmaker` fica no fork `iso-profiles` | pipeline separado de pacotes |
 
 Repo `keyring` só na Fase 2 (D5).
 
@@ -54,6 +54,7 @@ Repo `keyring` só na Fase 2 (D5).
 
 ### D5 — Infraestrutura (duas fases)
 - **Fase 1:** edição `bigcommunity/wmaker` via PR em big-comm/iso-profiles; pacotes genéricos no repo community assinados pela BigCommunity. Exige acordo com mantenedores.
+  *Revisto em 2026-11-26:* a edição fica no fork `big-windowmaker/iso-profiles` e não será enviada ao big-comm; os pacotes vão para o repositório próprio `[big-wm]` (Fase 2).
 - **Fase 2:** build sem segredos separado da publicação (modelo biglinux/build-package), actions fixadas por SHA, chave própria com subchave, `bigwm-keyring`, ISO com teste de boot QEMU, SHA256SUMS assinado e atestado de proveniência.
 
 ### D6 — Aproveitar dos repos antigos
