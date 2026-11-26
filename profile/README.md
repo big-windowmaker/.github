@@ -36,10 +36,11 @@
 </p>
 
 > [!WARNING]
-> **Versão Alpha (pre-release).** É uma ISO de teste: os pacotes do Big
-> WindowMaker vêm de um repositório local **não assinado** e ainda não recebem
-> atualizações pelo `pacman`. Experimente primeiro no **modo live** ou numa
-> **máquina virtual**, e não instale no computador de trabalho sem backup.
+> **Versão Alpha (pre-release).** É uma ISO de teste. Experimente primeiro no
+> **modo live** ou numa **máquina virtual**, e não instale no computador de
+> trabalho sem backup. Desde a ISO de 26/11, o sistema instalado recebe as
+> correções do Big WindowMaker pelo `pacman`, do repositório assinado
+> [`[big-wm]`](https://github.com/big-windowmaker/repo).
 
 ## ✨ Destaques
 
@@ -87,10 +88,10 @@
 
 ## 📥 Baixar a ISO
 
-**Versão atual:** Big WindowMaker **Alpha de novembro** (24/11/2026, kernel 6.18).
+**Versão atual:** Big WindowMaker **Alpha de novembro** (26/11/2026, kernel 6.18).
 
 <p align="center">
-  <a href="https://github.com/big-windowmaker/build-iso/releases/tag/big-windowmaker_TESTING_2026-11-24_k618-r65"><img src="https://img.shields.io/badge/Baixar-Alpha%20de%2024%2F11%2F2026-8a2be2?style=for-the-badge" alt="Baixar a Alpha de 24/11/2026"></a>
+  <a href="https://github.com/big-windowmaker/build-iso/releases/tag/big-windowmaker_TESTING_2026-11-26_k618-r70"><img src="https://img.shields.io/badge/Baixar-Alpha%20de%2026%2F11%2F2026-8a2be2?style=for-the-badge" alt="Baixar a Alpha de 26/11/2026"></a>
 </p>
 
 A ISO tem 4,9 GiB (5,3 GB) e o GitHub limita cada arquivo a 2 GB, por isso ela vem em
@@ -99,10 +100,10 @@ A ISO tem 4,9 GiB (5,3 GB) e o GitHub limita cada arquivo a 2 GB, por isso ela v
 
 | Arquivo | Tamanho |
 |---|---|
-| [`big-windowmaker_TESTING_2026-11-24_k618.iso.7z.001`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-24_k618-r65/big-windowmaker_TESTING_2026-11-24_k618.iso.7z.001) | 2,10 GB |
-| [`big-windowmaker_TESTING_2026-11-24_k618.iso.7z.002`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-24_k618-r65/big-windowmaker_TESTING_2026-11-24_k618.iso.7z.002) | 2,10 GB |
-| [`big-windowmaker_TESTING_2026-11-24_k618.iso.7z.003`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-24_k618-r65/big-windowmaker_TESTING_2026-11-24_k618.iso.7z.003) | 1,07 GB |
-| [`SHA256SUMS`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-24_k618-r65/SHA256SUMS) | somas de verificação |
+| [`big-windowmaker_TESTING_2026-11-26_k618.iso.7z.001`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-26_k618-r70/big-windowmaker_TESTING_2026-11-26_k618.iso.7z.001) | 2,10 GB |
+| [`big-windowmaker_TESTING_2026-11-26_k618.iso.7z.002`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-26_k618-r70/big-windowmaker_TESTING_2026-11-26_k618.iso.7z.002) | 2,10 GB |
+| [`big-windowmaker_TESTING_2026-11-26_k618.iso.7z.003`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-26_k618-r70/big-windowmaker_TESTING_2026-11-26_k618.iso.7z.003) | 1,07 GB |
+| [`SHA256SUMS`](https://github.com/big-windowmaker/build-iso/releases/download/big-windowmaker_TESTING_2026-11-26_k618-r70/SHA256SUMS) | somas de verificação |
 
 > [!TIP]
 > As ISOs saem como *pre-release*, e o atalho "latest" do GitHub ignora
@@ -117,7 +118,7 @@ A ISO tem 4,9 GiB (5,3 GB) e o GitHub limita cada arquivo a 2 GB, por isso ela v
 ```sh
 # Arch/Manjaro/BigLinux: sudo pacman -S 7zip   ·   Debian/Ubuntu: sudo apt install 7zip
 sha256sum -c SHA256SUMS --ignore-missing          # confere as três partes
-7z x big-windowmaker_TESTING_2026-11-24_k618.iso.7z.001
+7z x big-windowmaker_TESTING_2026-11-26_k618.iso.7z.001
 sha256sum -c SHA256SUMS --ignore-missing          # agora confere também a .iso
 ```
 
@@ -135,13 +136,13 @@ de novo.
 3. Confira a ISO no PowerShell, na pasta dos arquivos:
 
    ```powershell
-   Get-FileHash .\big-windowmaker_TESTING_2026-11-24_k618.iso -Algorithm SHA256
+   Get-FileHash .\big-windowmaker_TESTING_2026-11-26_k618.iso -Algorithm SHA256
    ```
 
 4. O resultado precisa ser igual a:
 
    ```text
-   29419E519DE7E0B743A16336A5D78BF8985F506F8CE7FA5A930D79625A468435
+   4CF2BF357840CB3CCB4884BB628F149C421DCC8B822544A65D959A4FC37B6F5B
    ```
 
 </details>
@@ -152,14 +153,14 @@ de novo.
 ```sh
 brew install sevenzip
 shasum -a 256 -c SHA256SUMS --ignore-missing
-7zz x big-windowmaker_TESTING_2026-11-24_k618.iso.7z.001
-shasum -a 256 big-windowmaker_TESTING_2026-11-24_k618.iso
+7zz x big-windowmaker_TESTING_2026-11-26_k618.iso.7z.001
+shasum -a 256 big-windowmaker_TESTING_2026-11-26_k618.iso
 ```
 
 </details>
 
 SHA-256 da ISO:
-`29419e519de7e0b743a16336a5d78bf8985f506f8ce7fa5a930d79625a468435`
+`4cf2bf357840cb3ccb4884bb628f149c421dcc8b822544a65d959a4fc37b6f5b`
 
 ## 💾 Gravar no pendrive
 
@@ -182,7 +183,7 @@ Use o disco inteiro (`/dev/sdb`), não uma partição (`/dev/sdb1`).
 
 ```sh
 lsblk -o NAME,SIZE,MODEL,TRAN
-sudo dd if=big-windowmaker_TESTING_2026-11-24_k618.iso of=/dev/sdX bs=4M status=progress oflag=sync
+sudo dd if=big-windowmaker_TESTING_2026-11-26_k618.iso of=/dev/sdX bs=4M status=progress oflag=sync
 ```
 
 > [!WARNING]
@@ -300,22 +301,20 @@ Lista completa no [README do big-wm](https://github.com/big-windowmaker/big-wm#a
 ## 🔄 Atualizar o sistema
 
 O sistema-base (kernel, Firefox, LibreOffice, drivers...) vem dos repositórios
-do BigLinux/BigCommunity e é atualizado normalmente, por **Adicionar/remover
-programas** ou pelo terminal:
+do BigLinux/BigCommunity, e os pacotes do Big WindowMaker (`big-wm-*`,
+`windowmaker`, `wlmaker`, `wmake-zones`, dockapps) vêm do repositório assinado
+[`[big-wm]`](https://github.com/big-windowmaker/repo). Tudo é atualizado junto,
+por **Adicionar/remover programas** ou pelo terminal:
 
 ```sh
 sudo pacman -Syu
 ```
 
 > [!IMPORTANT]
-> Na Alpha, os pacotes do **Big WindowMaker** (`big-wm-*`, `windowmaker`,
-> `wlmaker`, `wmake-zones`, dockapps) ainda **não** estão num repositório
-> público e não mudam com o `pacman -Syu`. Para recebê-los, instale uma ISO
-> mais nova ou compile pelos repositórios
-> [big-wm](https://github.com/big-windowmaker/big-wm#pacotes-num-sistema-biglinuxbigcommunity)
-> e [packages](https://github.com/big-windowmaker/packages). O
-> `/etc/pacman.conf` da edição segura o `windowmaker` (`IgnorePkg`) para que
-> a versão do Big WindowMaker não seja trocada pela do Arch.
+> **Instalou de uma ISO anterior à de 26/11?** Ela não tem o `[big-wm]` e
+> segura o `windowmaker` com `IgnorePkg`. Ative o repositório uma vez, com os
+> passos do [README do repositório](https://github.com/big-windowmaker/repo#ativar);
+> depois disso, o `pacman -Syu` traz as correções.
 
 ## 🧪 Testar numa máquina virtual
 
@@ -439,7 +438,26 @@ Achou um erro? Abra uma issue no repositório da parte afetada (lista abaixo;
 na dúvida, no [big-wm](https://github.com/big-windowmaker/big-wm/issues)) com
 o modelo do computador, a sessão (X11 ou Wayland) e o que aconteceu.
 
-## 🆕 Novo na ISO de 24/11
+## 🆕 Novo na ISO de 26/11
+
+Na ISO de 26/11/2026 (testada em máquina virtual, BIOS e UEFI: boot, sessão
+live, instalação pelo Calamares, login e atualização do sistema instalado):
+
+- **Atualizações pelo `pacman`:** o repositório assinado
+  [`[big-wm]`](https://github.com/big-windowmaker/repo) vem configurado e é o
+  primeiro da lista, com a chave no pacote `big-wm-keyring`. Um pacote
+  adulterado é recusado. O `windowmaker` ganhou época (`1:`) e não é mais
+  trocado pelo do Arch, sem o `IgnorePkg`.
+- **Sessão > Relatar problema:** monta um relatório sem dados pessoais,
+  mostra o texto para você conferir e abre a issue já preenchida no GitHub.
+- **Travamentos registrados** (`coredumpctl`), com limite de tamanho, para o
+  relatório dizer quais programas caíram.
+- **Tela de bloqueio do X11** não pisca mais nem mostra "INCOMPATIBLE
+  COMPOSITOR" ao acordar os monitores.
+- **[Guia do usuário](https://github.com/big-windowmaker/big-wm/blob/main/docs/guia-do-usuario.md)**:
+  atalhos, Dock, Clip, zonas, aparência, bloqueio e atualizações num só lugar.
+
+### Na ISO de 24/11
 
 Na ISO de 24/11/2026 (testada em máquina virtual, BIOS e UEFI: boot, sessão live, instalação pelo Calamares e login no sistema instalado; X11 e Wayland medidos em 3 boots cada, com 21 verificações de funcionamento):
 
@@ -512,6 +530,7 @@ Maker 26; Thunar 4.21 e Dock com Abas 0.3.1.
 | [big-trust-alt](https://github.com/big-windowmaker/big-trust-alt) | Abrir programas do Windows com segurança: análise do arquivo e alternativas para Linux | |
 | [tabbed-dock](https://github.com/big-windowmaker/tabbed-dock) | Dock horizontal com abas e o controlador no Dock (X11 e Wayland) | [![CI](https://github.com/big-windowmaker/tabbed-dock/actions/workflows/ci.yml/badge.svg)](https://github.com/big-windowmaker/tabbed-dock/actions/workflows/ci.yml) |
 | [wmake-zones](https://github.com/big-windowmaker/wmake-zones) | Zonas de encaixe e mosaico de janelas (X11 e Wayland) | [![CI](https://github.com/big-windowmaker/wmake-zones/actions/workflows/ci.yml/badge.svg)](https://github.com/big-windowmaker/wmake-zones/actions/workflows/ci.yml) |
+| [repo](https://github.com/big-windowmaker/repo) | Repositório pacman assinado `[big-wm]` | [![publicar](https://github.com/big-windowmaker/repo/actions/workflows/publicar.yml/badge.svg)](https://github.com/big-windowmaker/repo/actions/workflows/publicar.yml) |
 | [build-iso](https://github.com/big-windowmaker/build-iso) | Geração da ISO, boot em VMs e teste de instalação (BIOS e UEFI) | [![Build ISO](https://github.com/big-windowmaker/build-iso/actions/workflows/build-iso.yml/badge.svg)](https://github.com/big-windowmaker/build-iso/actions/workflows/build-iso.yml) |
 | [iso-profiles](https://github.com/big-windowmaker/iso-profiles) | Perfil da edição `bigcommunity/wmaker` | |
 | [biglinux-livecd](https://github.com/big-windowmaker/biglinux-livecd) | Sessão live e integração com o instalador | |
@@ -570,7 +589,9 @@ snap zones and tiling, light and dark themes across GTK, libadwaita and Qt,
 clipboard history, an on-screen keyboard and gamepad, and a monitor manager,
 all in the NeXTSTEP style. Try the
 Alpha test ISO from [build-iso releases](https://github.com/big-windowmaker/build-iso/releases)
-in live mode or a virtual machine first. Maintainers: Rafael Ruscher and
+in live mode or a virtual machine first. Installed systems get updates
+through the signed [`[big-wm]`](https://github.com/big-windowmaker/repo)
+pacman repository. Maintainers: Rafael Ruscher and
 Barnabé Di Kartola. Special thanks to Alfredo Kojima (Window Maker),
 Philipp Kaeser (wlmaker), Bruno Gonçalves (BigLinux) and Tales A. Mendonça
 (BigCommunity).

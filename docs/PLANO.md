@@ -44,12 +44,12 @@ Estado: ✅ feito (no `main` em 2026-11-26) · ⏳ a fazer · 👤 com o mantene
 
 ### 1. Repositório pacman assinado
 - ✅ Chave criada em 2026-11-26: primária `2F36 D64F 633B BA80 052F  4893 4AF5 FC29 61C2 E4AF` (Ed25519, só certifica, até 2031) e subchave de assinatura `2C5B E454 0995 63AB 4C78  3205 173E 2C09 FC18 33B0` (até 2028). Só a subchave está na CI (segredo `REPO_SIGNING_KEY`).
-- 👤 A chave primária e o certificado de revogação estão em `~/.local/share/big-wm/chave-repositorio/` na máquina do mantenedor. **Copiar para mídia offline**, pôr senha (`gpg --homedir … --edit-key … passwd`) e apagar a cópia do disco.
+- ✅ A chave primária e o certificado de revogação estão offline, com senha, em duas mídias (2026-11-26). O disco do mantenedor guarda só a chave pública e o fingerprint. O passo a passo de renovar, revogar e recuperar está com o mantenedor, junto das cópias.
 - ✅ [big-windowmaker/repo](https://github.com/big-windowmaker/repo): workflow `publicar` (assina pacotes e banco num contêiner sem rede; o release é a fonte da verdade; verificação num Manjaro limpo, que recusa pacote adulterado). Publicado em 2026-11-26: num Manjaro limpo, a CI confia na chave, sincroniza e instala, e recusa um pacote adulterado ("invalid or corrupted package (PGP signature)").
 - ✅ packages#59: `big-wm-keyring`; `windowmaker` com `epoch=1`; `wdm` exigindo `windowmaker>=1:…`; patch 0032 (o `check()` do Window Maker quebrava com o automake 1.20).
 - ✅ iso-profiles#31 (`[big-wm]` no `pacman.conf`, sem `IgnorePkg`), biglinux-livecd#19 (Calamares popula a chave), build-iso#20 (chaveiro obrigatório na ISO). Entraram depois do primeiro run verde do `publicar`.
 - ✅ packages#61: `biglinux-livecd` 20 com essa mudança.
-- ⏳ Próxima ISO: a primeira com o `[big-wm]`; conferir no sistema instalado que `pacman -Syu` atualiza pelo repositório.
+- ✅ ISO r70 (2026-11-26), a primeira com o `[big-wm]`: o openQA instala pelo Calamares (BIOS e UEFI) e confere que o `[big-wm]` é o primeiro repositório, que a chave está no chaveiro e que o `pacman -Syu` atualiza por ele. O teste novo (build-iso#21) achou dois erros, corrigidos antes da publicação: o build descartava o `[big-wm]` ao refazer o `pacman.conf` da edição (build-iso#22), e o chroot da imagem mhwd não conhecia a chave (build-iso#23).
 
 ### 2. Retorno dos usuários
 - ✅ Issues ativadas em todos os 13 repositórios (2026-11-26). Os modelos da organização (`bug.yml`, `feature.yml`) valem para todos.
@@ -84,7 +84,7 @@ Estado: ✅ feito (no `main` em 2026-11-26) · ⏳ a fazer · 👤 com o mantene
 - ✅ `authproto_pam` "setuid failed": não é erro. O PAM 1.7.3 registra em nível debug e segue. Os erros de nível alto daquele dia vieram de testes de laboratório.
 
 ## Depois dos 30 dias
-- openQA da ISO: boot → instalação → login → bloqueio (já existe o workflow `mirror-openqa-image` no build-iso).
+- openQA da ISO: a instalação (BIOS e UEFI) e a atualização pelo `[big-wm]` já são testadas em cada build do build-iso. Falta estender para login → bloqueio → desbloqueio.
 - Acessibilidade: validar o Orca de ponta a ponta no X11 e no Wayland.
 - Dividir o `big-wm/tests/run.sh` (3786 linhas) por componente.
 - Arquivar os diários de missão de `big-wm/docs`.
