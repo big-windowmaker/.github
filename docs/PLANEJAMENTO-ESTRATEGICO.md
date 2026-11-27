@@ -365,20 +365,22 @@ Window Maker upstream: última versão 0.96.0 (2023), patches só por e-mail
 
 ---
 
-## 12. Quick wins (≤ 1 dia cada)
+## 12. Quick wins (≤ 1 dia cada) — Etapa 1
 
-| ID | Tarefa | Impacto |
+| ID | Tarefa | Estado (2026-11-27) |
 | --- | --- | --- |
-| Q1 | Corrigir as contradições do app de boas-vindas (U1) | primeira impressão |
-| Q2 | Proteger o segredo `REPO_SIGNING_KEY` com um *environment* (S1) | segurança |
-| Q3 | Trocar as 3 fontes `http` por `https` ou espelho próprio (S4) | cadeia de fornecimento |
-| Q4 | `timeout` nas etapas síncronas dos lançadores (E3) | sessão nunca trava no login |
-| Q5 | Nome de arquivo da ISO com o `rNN` (C3) | conferência do SHA-256 |
-| Q6 | Atalho para ligar o Orca (Super+Alt+S, como na live) (A1) | acessibilidade básica |
-| Q7 | Mover diários e relatórios de `big-wm/docs` para `docs/arquivo/` (§8.5) | contribuidores |
-| Q8 | Ativar "require status checks" no `main` dos repositórios com CI (E5) | `main` sempre verde |
+| Q1 | Corrigir as contradições do app de boas-vindas (U1) | ✅ big-wm#75: teclado na tela = big-keyboard nas duas sessões. O "localizar ponteiro" já funcionava no Wayland; o README é que estava errado. |
+| Q2 | Proteger o segredo `REPO_SIGNING_KEY` com um *environment* (S1) | 🟡 repo#1: ambiente `repo-assinatura` (só `main`) em uso. Falta o mantenedor regravar o segredo no ambiente a partir da mídia offline (o GitHub não deixa mover um segredo). |
+| Q3 | Trocar as 3 fontes `http` (S4) | ✅ packages#62: espelho `fontes-externas`, mesmos sha256 |
+| Q4 | `timeout` nas etapas da abertura da sessão (E3) | ✅ big-wm#76: `big_wm_step`; laboratório com firstrun travado: encerrado em 120 s, sessão abriu |
+| Q5 | Nome de arquivo da ISO com o `rNN` (C3) | ✅ build-iso#26 (vale na próxima publicação) |
+| Q6 | Atalho para ligar o Orca (A1) | ✅ big-wm#77: Super+Alt+S nas duas sessões, validado em VM (X11 e Wayland) |
+| Q7 | Organizar `big-wm/docs` | ✅ big-wm#78: índice `docs/README.md` (usuários, técnico, arquivo), sem mover arquivos |
+| Q8 | CI obrigatório no `main` (E5) | ✅ big-wm, tabbed-dock, big-keyboard, display-resolution, wmake-zones. Falta o packages (precisa de um job de resumo, Etapa 2). |
 
----
+Achado durante a Etapa 1: teste instável do microfone da bandeja
+(`test_single_instance_and_sigterm`, espera de 5 s pelo `pactl`) quebrou um
+CI de PR. Entra na Etapa 2 com E5.
 
 ## 13. Etapas: estado e critérios
 
