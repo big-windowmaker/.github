@@ -171,7 +171,7 @@ flowchart LR
 | E1 | Custo dos forks | 179 patches no wlmaker; cada rebase custa uma rodada |
 | E2 | `startbigwm`/`startbigwm-wayland` nunca executados por um teste | `tests/integration/x11.sh` repete os passos à mão |
 | E3 | Lançadores sem timeout | `firstrun` (1 693 linhas) e `wprefs-sync` síncronos; um travamento atrasa a sessão indefinidamente |
-| E4 | No Wayland, um programa do Autostart que não inicia encerra a sessão | `data/wlmaker/Config.plist.in:240-245` |
+| E4 | ~~No Wayland, um programa do Autostart que não inicia encerra a sessão~~ (não procede, ver 12b) | `data/wlmaker/Config.plist.in:240-245` |
 | E5 | `main` quebrado 8 vezes em 14 dias | runs de push com falha no big-wm |
 | E6 | `big-wm-wprefs-sync` (2 196 linhas) existe só para traduzir a configuração do X11 para o wlmaker | camada de tradução frágil por natureza |
 | E7 | `eval` de linhas de configuração | `big-wm-dockapps:276,279,284` |
@@ -195,7 +195,7 @@ flowchart LR
 ### 6.6 Diagnóstico
 | ID | Problema | Evidência |
 | --- | --- | --- |
-| D1 | Coredump registrado, mas sem o core | OptiPlex r71: `gnome-calculator` SIGSEGV, "Resource limits disable core dumping"; a sessão real tem limite ilimitado → [H] limite herdado do coletor do teste |
+| D1 | Coredump registrado, mas sem o core (era do teste, ver 12b) | OptiPlex r71: `gnome-calculator` SIGSEGV, "Resource limits disable core dumping"; a sessão real tem limite ilimitado → [H] limite herdado do coletor do teste |
 | D2 | Antes da r71 a verificação "nenhum coredump" passava sem testar nada | coredumps desligados (`Storage=none`) até a r71 |
 
 ---
@@ -381,6 +381,18 @@ Window Maker upstream: última versão 0.96.0 (2023), patches só por e-mail
 Achado durante a Etapa 1: teste instável do microfone da bandeja
 (`test_single_instance_and_sigterm`, espera de 5 s pelo `pactl`) quebrou um
 CI de PR. Entra na Etapa 2 com E5.
+
+## 12b. Etapa 2 — estabilidade e segurança (2026-11-27)
+
+| Tarefa | Estado | O que se verificou |
+| --- | --- | --- |
+| T05 Lançadores em teste | ✅ big-wm#82 (X11), #83 (Wayland) | A integração abre as sessões pelo `startbigwm` e pelo `startbigwm-wayland` reais (163 e 164 verificações passando, XWayland sob demanda incluído). |
+| T06 Autostart do wlmaker | ✅ big-wm#79 (só comentário) | **E4 não existia:** o wlmaker só encerra com linha malformada ou sem `pipe`/`fork`. Na VM, um comando inexistente no Autostart só registrou o erro no `wlmaker.log` e a sessão seguiu. |
+| T07 Rollback | ✅ repo#2 (documentação) | Reverter na origem gera versão maior; versão errada maior do que devia: apagar o anexo e republicar. O segundo caso não foi exercitado no repositório real. |
+| T08 Lista única de pacotes esperados | ⚫ não feito | O release é a fonte da verdade: um pacote publicado não some. A lista do repositório só protege a primeira publicação; unificar com a da ISO acoplaria dois repositórios por pouco ganho. |
+| T15 Coredump sem core | ✅ big-wm#81 | **D1 era do teste:** o `sudo` zera o limite de core dos comandos. Na sessão real o limite é ilimitado. O script de teste agora libera o limite (VM: `COREFILE present`). |
+| Q8 `packages` protegido | ✅ packages#63 | Job `Resultado` com nome fixo, exigido no `main`. |
+| Teste instável do microfone | 🟡 big-wm#80 | Não reproduz (0 de 40 com a CPU carregada); a falha agora mostra o estado do processo. |
 
 ## 13. Etapas: estado e critérios
 
