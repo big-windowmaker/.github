@@ -448,6 +448,13 @@ disco* do próprio Windows. No instalador, em **Partições**, escolha
 **Particionamento manual**: crie a raiz (`/`) do Big WindowMaker no espaço
 livre (Btrfs) e use a partição EFI que já existe, montada em `/boot/efi`,
 **sem formatar**. O menu do GRUB passa a oferecer os dois sistemas.
+
+Isso vale para o Windows instalado em **UEFI** (o normal desde 2012). Se o
+Windows está em **BIOS/Legacy** (disco MBR, sem partição EFI), inicie o
+pendrive também pela entrada **sem** UEFI no menu de boot; em
+**Particionamento manual**, crie só a raiz (`/`) no espaço livre, e o GRUB é
+gravado no início do disco. Não misture os dois modos: um sistema em UEFI e
+outro em BIOS não aparecem no mesmo menu.
 </details>
 
 <details>

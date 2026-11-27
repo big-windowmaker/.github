@@ -412,7 +412,7 @@ Legenda: ✅ concluída e validada · 🟢 implementada, falta validar ·
 | Revisão humana | 🔴 | nenhum revisor |
 | Orca de ponta a ponta | ⚪ | PLANO.md |
 | Licença do iso-profiles | 🔴 | decisão: o fork fica só aqui; arquivos herdados sem licença |
-| Critérios de Beta | 🟡 | **Beta 1 publicada em 27/11/2026 por decisão do mantenedor** (ISO r74, openQA verde em BIOS e UEFI); abertos: openQA 7 dias seguidos, ISO num espelho fora do GitHub com `SHA256SUMS` assinado, 5 pessoas de fora |
+| Critérios de Beta | 🟡 | **Beta 1 publicada em 27/11/2026 por decisão do mantenedor** (ISO r74, openQA verde em BIOS e UEFI); abertos: openQA 7 dias seguidos; Orca lendo os menus do Window Maker (o atalho Super+Alt+S e os aplicativos já funcionam); menus em inglês (o big-keyboard já tem); ISO num espelho fora do GitHub com `SHA256SUMS` assinado; 5 pessoas de fora |
 | AUDITORIA.md | ⚫ | desatualizado; substituído por este documento e pelo PLANO.md |
 
 **Critérios propostos para a Beta 1** (todos verificáveis):
