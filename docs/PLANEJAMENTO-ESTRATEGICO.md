@@ -420,7 +420,7 @@ Legenda: ✅ concluída e validada · 🟢 implementada, falta validar ·
 - [ ] openQA verde em BIOS e UEFI por 7 dias seguidos, sem rerun.
 - [ ] Nenhum P0/P1 aberto.
 - [ ] Orca liga por atalho e lê menus e o terminal no X11.
-- [x] big-keyboard e menus em inglês (verificado em 27/11 numa ISO com o live em inglês: menu raiz, Dock com Abas e instalador).
+- [x] big-keyboard e menus em inglês: menus verificados em 27/11 numa ISO com o live em inglês (menu raiz, Dock com Abas e instalador); teclado em inglês desde o big-keyboard 0.3.0 (Beta 1, 27/11).
 - [ ] Boas-vindas sem contradições (Q1).
 - [ ] Lançadores com timeout e teste (E2, E3).
 - [ ] ISO numa só peça num espelho além do GitHub, com `SHA256SUMS` assinado.
