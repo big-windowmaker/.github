@@ -412,7 +412,7 @@ Legenda: ✅ concluída e validada · 🟢 implementada, falta validar ·
 | Revisão humana | 🔴 | nenhum revisor |
 | Orca de ponta a ponta | ⚪ | PLANO.md |
 | Licença do iso-profiles | 🔴 | decisão: o fork fica só aqui; arquivos herdados sem licença |
-| Critérios de Beta | 🟡 | **Beta 1 publicada em 27/11/2026 por decisão do mantenedor** (ISO r74, openQA verde em BIOS e UEFI); abertos: openQA 7 dias seguidos; Orca lendo os menus do Window Maker (o atalho Super+Alt+S e os aplicativos já funcionam); menus em inglês (o big-keyboard já tem); ISO num espelho fora do GitHub com `SHA256SUMS` assinado; 5 pessoas de fora |
+| Critérios de Beta | 🟡 | **Beta 1 publicada em 27/11/2026 por decisão do mantenedor** (ISO r74, openQA verde em BIOS e UEFI); abertos: openQA 7 dias seguidos (a ISO roda todo dia desde 27/11, build-iso#29); Orca lendo os menus do Window Maker (o atalho Super+Alt+S e os aplicativos já funcionam); ISO num espelho fora do GitHub com `SHA256SUMS` assinado; 5 pessoas de fora |
 | AUDITORIA.md | ⚫ | desatualizado; substituído por este documento e pelo PLANO.md |
 
 **Critérios propostos para a Beta 1** (todos verificáveis):
@@ -420,7 +420,7 @@ Legenda: ✅ concluída e validada · 🟢 implementada, falta validar ·
 - [ ] openQA verde em BIOS e UEFI por 7 dias seguidos, sem rerun.
 - [ ] Nenhum P0/P1 aberto.
 - [ ] Orca liga por atalho e lê menus e o terminal no X11.
-- [ ] big-keyboard e menus em inglês.
+- [x] big-keyboard e menus em inglês (verificado em 27/11 numa ISO com o live em inglês: menu raiz, Dock com Abas e instalador).
 - [ ] Boas-vindas sem contradições (Q1).
 - [ ] Lançadores com timeout e teste (E2, E3).
 - [ ] ISO numa só peça num espelho além do GitHub, com `SHA256SUMS` assinado.
