@@ -494,7 +494,20 @@ reinicie.
 
 ## 🆕 Novidades da Beta 1
 
-Desde a Alpha de 26/11:
+### Depois da Beta 1
+
+Pelo `sudo pacman -Syu` (repositório `[big-wm]`, 27/11):
+
+- **Menu do Wayland com acentos certos** (big-wm 1.0.1): depois de editar o
+  menu no WPrefs, a sessão Wayland mostrava "SessÃ£o" e "ConfiguraÃ§Ãµes".
+- **Dock com Abas 0.3.3:** um programa aberto sem atalho (`.desktop`) aparece
+  com o ícone dele, não com o ícone genérico.
+
+Na próxima ISO: menu do GRUB sem número pulado; instalador no idioma escolhido
+no live e com os tamanhos das partições legíveis; miniaturas de documentos do
+LibreOffice, EPUB e fotos RAW no Thunar.
+
+### Desde a Alpha de 26/11
 
 - **Drivers proprietários na instalação:** o instalador passa a instalar os
   drivers da placa de vídeo (NVIDIA), de Wi-Fi (Broadcom) e de máquina virtual
@@ -553,7 +566,7 @@ Desde a Alpha de 26/11:
 | **Sessão X11** | [Window Maker](https://www.windowmaker.org/) 0.96.0 (git `558e67f` + 32 patches), compositor `picom` opcional (*Configurações > Efeitos visuais*). |
 | **Sessão Wayland** | [wlmaker](https://github.com/phkaeser/wlmaker) 0.8 (git `5576886` + 179 patches; os que servem a todos são enviados ao autor) e XWayland para programas X11. |
 | **Login e bloqueio** | wdm (Window Maker Display Manager); bloqueio pelo `xsecurelock` no X11 e `gtklock` no Wayland, com a mesma aparência. |
-| **Componentes próprios** | big-wm 1.0.0 (sessões, temas, menus, integração), wmake-zones 0.5.3, Dock com Abas 0.3.2, big-keyboard 0.3.0, big-wm-display-resolution, cerca de 30 dockapps. |
+| **Componentes próprios** | big-wm 1.0.1 (sessões, temas, menus, integração), wmake-zones 0.5.3, Dock com Abas 0.3.3, big-keyboard 0.3.0, big-wm-display-resolution, cerca de 30 dockapps. |
 | **Drivers** | `big-driver-manager-cli` (do BigLinux): na live e na instalação, conforme a opção do boot (`driver=nonfree` na entrada recomendada, `driver=free` na 2). |
 | **Disco** | Btrfs com subvolumes `@` e `@home` (pontos de restauração), `/boot` dentro da raiz, memória virtual em zram e arquivo de swap (sem partição de swap). |
 | **Segurança** | Firewall `ufw` ligado; repositório `[big-wm]` assinado com a chave `2F36 D64F 633B BA80 052F 4893 4AF5 FC29 61C2 E4AF` (pacote `big-wm-keyring`); `SigLevel = Required`. |
